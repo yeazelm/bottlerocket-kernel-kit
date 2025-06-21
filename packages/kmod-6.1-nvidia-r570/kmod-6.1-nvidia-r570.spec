@@ -175,6 +175,22 @@ make %{?_smp_mflags} ARCH=%{_cross_karch} IGNORE_CC_MISMATCH=1 SYSSRC=%{kernel_s
 %{_cross_target}-strip -g --strip-unneeded nvidia-peermem/nvidia-peermem.o
 %{_cross_target}-strip -g --strip-unneeded nvidia-modeset/nv-modeset-interface.o
 
+ls -al nvidia-modeset/
+# Compress unlinked files for later decompression
+gzip -9 nvidia.mod.o
+gzip -9 nvidia/nv-kernel.o_binary
+gzip -9 nvidia-modeset.mod.o
+gzip -9 nvidia/nv-interface.o
+gzip -9 nvidia-uvm.mod.o
+gzip -9 nvidia-uvm.o
+gzip -9 nvidia-drm.mod.o
+gzip -9 nvidia-drm.o
+gzip -9 nvidia-peermem.mod.o
+gzip -9 nvidia-peermem/nvidia-peermem.o
+gzip -9 nvidia-modeset/nv-modeset-interface.o
+# This is a symlink but the specfile refers to this path vs nvidia-modeset/nv-modeset-kernel.o_binary
+gzip -9 -f nvidia-modeset/nv-modeset-kernel.o
+
 # We delete these files since we just stripped the input .o files above, and
 # will be build at runtime in the host
 rm nvidia{,-modeset,-peermem}.o
@@ -310,26 +326,26 @@ install -p -m 0644 \
 %endif
 
 # proprietary driver
-install kernel/nvidia.mod.o %{buildroot}%{_cross_datadir}/nvidia/tesla/module-objects.d
-install kernel/nvidia/nv-interface.o %{buildroot}%{_cross_datadir}/nvidia/tesla/module-objects.d
-install kernel/nvidia/nv-kernel.o_binary %{buildroot}%{_cross_datadir}/nvidia/tesla/module-objects.d/nv-kernel.o
+install kernel/nvidia.mod.o.gz %{buildroot}%{_cross_datadir}/nvidia/tesla/module-objects.d
+install kernel/nvidia/nv-interface.o.gz %{buildroot}%{_cross_datadir}/nvidia/tesla/module-objects.d
+install kernel/nvidia/nv-kernel.o_binary.gz %{buildroot}%{_cross_datadir}/nvidia/tesla/module-objects.d/nv-kernel.o.gz
 
 # uvm
-install kernel/nvidia-uvm.mod.o %{buildroot}%{_cross_datadir}/nvidia/tesla/module-objects.d
-install kernel/nvidia-uvm.o %{buildroot}%{_cross_datadir}/nvidia/tesla/module-objects.d
+install kernel/nvidia-uvm.mod.o.gz %{buildroot}%{_cross_datadir}/nvidia/tesla/module-objects.d
+install kernel/nvidia-uvm.o.gz %{buildroot}%{_cross_datadir}/nvidia/tesla/module-objects.d
 
 # modeset
-install kernel/nvidia-modeset.mod.o %{buildroot}%{_cross_datadir}/nvidia/tesla/module-objects.d
-install kernel/nvidia-modeset/nv-modeset-interface.o %{buildroot}%{_cross_datadir}/nvidia/tesla/module-objects.d
-install kernel/nvidia-modeset/nv-modeset-kernel.o %{buildroot}%{_cross_datadir}/nvidia/tesla/module-objects.d
+install kernel/nvidia-modeset.mod.o.gz %{buildroot}%{_cross_datadir}/nvidia/tesla/module-objects.d
+install kernel/nvidia-modeset/nv-modeset-interface.o.gz %{buildroot}%{_cross_datadir}/nvidia/tesla/module-objects.d
+install kernel/nvidia-modeset/nv-modeset-kernel.o.gz %{buildroot}%{_cross_datadir}/nvidia/tesla/module-objects.d
 
 # peermem
-install kernel/nvidia-peermem.mod.o %{buildroot}%{_cross_datadir}/nvidia/tesla/module-objects.d
-install kernel/nvidia-peermem/nvidia-peermem.o %{buildroot}%{_cross_datadir}/nvidia/tesla/module-objects.d
+install kernel/nvidia-peermem.mod.o.gz %{buildroot}%{_cross_datadir}/nvidia/tesla/module-objects.d
+install kernel/nvidia-peermem/nvidia-peermem.o.gz %{buildroot}%{_cross_datadir}/nvidia/tesla/module-objects.d
 
 # drm
-install kernel/nvidia-drm.mod.o %{buildroot}/%{_cross_datadir}/nvidia/tesla/module-objects.d
-install kernel/nvidia-drm.o %{buildroot}/%{_cross_datadir}/nvidia/tesla/module-objects.d
+install kernel/nvidia-drm.mod.o.gz %{buildroot}/%{_cross_datadir}/nvidia/tesla/module-objects.d
+install kernel/nvidia-drm.o.gz %{buildroot}/%{_cross_datadir}/nvidia/tesla/module-objects.d
 
 # open driver
 install -d %{buildroot}%{_cross_datadir}/nvidia/open-gpu/drivers/
@@ -529,18 +545,18 @@ popd
 %{_cross_datadir}/nvidia/open-gpu-supported-devices.json
 
 # driver
-%{_cross_datadir}/nvidia/tesla/module-objects.d/nvidia.mod.o
-%{_cross_datadir}/nvidia/tesla/module-objects.d/nv-interface.o
-%{_cross_datadir}/nvidia/tesla/module-objects.d/nv-kernel.o
+%{_cross_datadir}/nvidia/tesla/module-objects.d/nvidia.mod.o.gz
+%{_cross_datadir}/nvidia/tesla/module-objects.d/nv-interface.o.gz
+%{_cross_datadir}/nvidia/tesla/module-objects.d/nv-kernel.o.gz
 
 # uvm
-%{_cross_datadir}/nvidia/tesla/module-objects.d/nvidia-uvm.mod.o
-%{_cross_datadir}/nvidia/tesla/module-objects.d/nvidia-uvm.o
+%{_cross_datadir}/nvidia/tesla/module-objects.d/nvidia-uvm.mod.o.gz
+%{_cross_datadir}/nvidia/tesla/module-objects.d/nvidia-uvm.o.gz
 
 # modeset
-%{_cross_datadir}/nvidia/tesla/module-objects.d/nv-modeset-interface.o
-%{_cross_datadir}/nvidia/tesla/module-objects.d/nv-modeset-kernel.o
-%{_cross_datadir}/nvidia/tesla/module-objects.d/nvidia-modeset.mod.o
+%{_cross_datadir}/nvidia/tesla/module-objects.d/nv-modeset-interface.o.gz
+%{_cross_datadir}/nvidia/tesla/module-objects.d/nv-modeset-kernel.o.gz
+%{_cross_datadir}/nvidia/tesla/module-objects.d/nvidia-modeset.mod.o.gz
 
 # tmpfiles
 %{_cross_tmpfilesdir}/nvidia-tesla.conf
@@ -643,10 +659,10 @@ popd
 
 # Neither nvidia-peermem nor nvidia-drm are included in driver container images, we exclude them
 # for now, and we will add them if requested
-%exclude %{_cross_datadir}/nvidia/tesla/module-objects.d/nvidia-peermem.mod.o
-%exclude %{_cross_datadir}/nvidia/tesla/module-objects.d/nvidia-peermem.o
-%exclude %{_cross_datadir}/nvidia/tesla/module-objects.d/nvidia-drm.mod.o
-%exclude %{_cross_datadir}/nvidia/tesla/module-objects.d/nvidia-drm.o
+%exclude %{_cross_datadir}/nvidia/tesla/module-objects.d/nvidia-peermem.mod.o.gz
+%exclude %{_cross_datadir}/nvidia/tesla/module-objects.d/nvidia-peermem.o.gz
+%exclude %{_cross_datadir}/nvidia/tesla/module-objects.d/nvidia-drm.mod.o.gz
+%exclude %{_cross_datadir}/nvidia/tesla/module-objects.d/nvidia-drm.o.gz
 %exclude %{_cross_libexecdir}/nvidia/tesla/bin/nvidia-cuda-mps-control
 %exclude %{_cross_libexecdir}/nvidia/tesla/bin/nvidia-cuda-mps-server
 %exclude %{_cross_bindir}/nvidia-cuda-mps-control
