@@ -18,9 +18,14 @@ sha512 = "17cb2df6ba6f5d31719815243a1bde156f822354e50a57405b51a49827e0c29ae0db31
 force-upstream = true
 
 [[package.metadata.build-package.external-files]]
-# Use latest-neuron-srpm-url.sh to get this.
+# Use latest-2.21-neuron-srpm-url.sh to get this.
 url = "https://yum.repos.neuron.amazonaws.com/aws-neuronx-dkms-2.21.37.0.noarch.rpm"
 sha512 = "4bdb01d846f12a04bdbe6902c3008ebadbcb50d4d94e8f81b524c02a4e94da7041cdb5e94fd564e1d9898f52a8cbd960a6a65435b90ba7d7839c807e7ca8736d"
+
+[[package.metadata.build-package.external-files]]
+# Use latest-neuron-srpm.url.sh to get this.
+url = "https://yum.repos.neuron.amazonaws.com/aws-neuronx-dkms-2.23.9.0.noarch.rpm"
+sha512 = "70cd505d616279e09fc212cc66b8e41544756ec0f1284f6e827f4d5c23a2c23dda3541e87e5f385aeafe291c595f144d7f4a53e33bce7f8b916cb414fad22aae"
 
 [build-dependencies]
 microcode = { path = "../microcode" }
