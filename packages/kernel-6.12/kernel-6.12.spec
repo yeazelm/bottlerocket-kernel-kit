@@ -17,6 +17,7 @@ Source2: https://yum.repos.neuron.amazonaws.com/aws-neuronx-dkms-2.21.37.0.noarc
 # Use latest-neuron-srpm-url.sh to get this.
 Source3: https://yum.repos.neuron.amazonaws.com/aws-neuronx-dkms-2.24.7.0.noarch.rpm
 Source4: gpgkey-00FA2C1079260870A76D2C285749CAD8646D9185.asc
+Source5: https://efa-installer.amazonaws.com/aws-efa-installer-1.44.0.tar.gz
 
 # Custom Bottlerocket kernel configurations.
 Source100: config-bottlerocket
@@ -45,6 +46,9 @@ Source224: load-neuron-latest-modules.service
 # Bootconfig snippets to adjust the default kernel command line for the platform.
 Source300: bootconfig-aws.conf
 Source301: bootconfig-vmware.conf
+
+# EFA config header for external EFA module
+Source400: efa-config.h
 
 # Help out-of-tree module builds run `make prepare` automatically.
 Patch1001: 1001-Makefile-add-prepare-target-for-external-modules.patch
@@ -230,9 +234,9 @@ if ! diff "${KCONFIG_CONFIG}" "${SOURCE_FILE}"; then
 fi
 
 rm -f ../config-* ../*.patch
+cd %{_builddir}
 
 %if "%{_cross_arch}" == "x86_64"
-cd %{_builddir}
 # 2.21 for inf1 support
 rpmkeys --import %{S:4} --dbpath "${PWD}/rpmdb"
 rpmkeys --checksig %{S:2} --dbpath "${PWD}/rpmdb"
@@ -250,14 +254,23 @@ find usr/src/ -mindepth 1 -maxdepth 1 -type d -exec mv {} neuron_latest \;
 rm -r usr
 %endif
 
-%global kmake \
-make -s\\\
-  ARCH="%{_cross_karch}"\\\
-  CROSS_COMPILE="%{_cross_target}-"\\\
-  INSTALL_HDR_PATH="%{buildroot}%{_cross_prefix}"\\\
-  INSTALL_MOD_PATH="%{buildroot}%{_cross_prefix}"\\\
-  INSTALL_MOD_STRIP=1\\\
-%{nil}
+# EFA driver extraction
+tar -xf %{S:5}
+pushd aws-efa-installer
+rpm2cpio RPMS/ALINUX2023/%{_cross_arch}/efa-driver/efa-2.17.3-1.amzn2023.%{_cross_arch}.rpm | cpio -idmu './usr/src/efa-*'
+find usr/src/ -mindepth 1 -maxdepth 1 -type d -exec mv {} ../efa_driver \;
+mkdir ../efa_driver/build
+popd
+rm -r aws-efa-installer
+
+%global kmake %{shrink: \
+make -s \
+  ARCH="%{_cross_karch}" \
+  CROSS_COMPILE="%{_cross_target}-" \
+  INSTALL_HDR_PATH="%{buildroot}%{_cross_prefix}" \
+  INSTALL_MOD_PATH="%{buildroot}%{_cross_prefix}" \
+  INSTALL_MOD_STRIP=1 \
+  %{nil}}
 
 %build
 %kmake mrproper
@@ -269,6 +282,35 @@ make -s\\\
 %kmake %{?_smp_mflags} M=%{_builddir}/neuron_2_21
 %kmake %{?_smp_mflags} M=%{_builddir}/neuron_latest
 %endif
+
+# Build EFA driver with CMake
+pushd %{_builddir}/efa_driver/build
+cat <<'EOF' >../CMakeLists.txt
+cmake_minimum_required(VERSION 3.10)
+project(efa C)
+
+set(KERNEL_VER "%{version}")
+set(KERNEL_DIR "%{_builddir}/linux-%{version}")
+set(KERNEL_MAKEFILE "%{_builddir}/linux-%{version}/Makefile")
+
+message("-- Kernel directory - ${KERNEL_DIR}")
+
+set(GCOV_PROFILE OFF CACHE BOOL "Enable GCOV profiling")
+set(ENABLE_P2P ON CACHE BOOL "Enable Peer-to-peer memory")
+set(ENABLE_KVERBS ON CACHE BOOL "Enable kernel verbs support")
+
+add_subdirectory(src)
+EOF
+
+sed -i -e 's,OUTPUT_QUIET ERROR_QUIET,,g' ../config/efa.cmake
+sed -i -e 's,$(MAKE),%{kmake},g' ../config/Makefile
+%{cross_cmake} ..
+
+# Provide config.h that provides correct compatibilty
+rm src/config.h
+cp %{S:400} src/config.h
+%kmake %{?_smp_mflags} M=%{_builddir}/efa_driver/build modules
+popd
 
 make -C tools/bpf/bpftool bootstrap
 ./tools/bpf/bpftool/bootstrap/bpftool btf dump file vmlinux format c > vmlinux.h
@@ -285,6 +327,7 @@ install -d %{buildroot}%{_cross_libexecdir}/neuron/neuron_latest/
 mv %{buildroot}%{_cross_kmoddir}/neuron_2_21/neuron.%{_ko} %{buildroot}%{_cross_libexecdir}/neuron/neuron_2_21/
 mv %{buildroot}%{_cross_kmoddir}/neuron_latest/neuron.%{_ko} %{buildroot}%{_cross_libexecdir}/neuron/neuron_latest/
 %endif
+mv %{_builddir}/efa_driver/build/src/efa.ko %{buildroot}%{_cross_kmoddir}/kernel/drivers/amazon/net/efa/efa.%{_ko}
 
 install -d %{buildroot}/boot
 install -T -m 0755 arch/%{_cross_karch}/boot/%{_cross_kimage} %{buildroot}/boot/vmlinuz
