@@ -18,105 +18,12 @@ ship addiitonal firmware when adding drivers.
 * liquidio - CONFIG_LIQUIDIO
 * nitrox - CONFIG_NITROX
 * knav_qmss_queue - CONFIG_KEYSTONE_NAVIGATOR_QMSS
-* nfp - CONFIG_NFP
-* fsl_mc bus - CONFIG_FSL_MC_BUS
-* inside-secure - CONFIG_CRYPTO_DEV_SAFEXCEL
 
 Signed-off-by: Leonard Foerster <foersleo@amazon.com>
 ---
- LICENCE.Netronome       |  65 ------------
- LICENCE.cavium          |  59 -----------
- LICENCE.cavium_liquidio |  68 -------------
- LICENCE.qat_firmware    |  36 -------
- LICENCE.ti-keystone     |  61 -----------
- LICENSE.amd-sev         |  64 ------------
- LICENSE.nxp_mc_firmware | 127 -----------------------
- WHENCE                  | 218 ----------------------------------------
- 8 files changed, 698 deletions(-)
- delete mode 100644 LICENCE.Netronome
- delete mode 100644 LICENCE.cavium
- delete mode 100644 LICENCE.cavium_liquidio
- delete mode 100644 LICENCE.qat_firmware
- delete mode 100644 LICENCE.ti-keystone
- delete mode 100644 LICENSE.amd-sev
- delete mode 100644 LICENSE.nxp_mc_firmware
-
-diff --git a/LICENCE.Netronome b/LICENCE.Netronome
-deleted file mode 100644
-index 1ed7a7c..0000000
---- a/LICENCE.Netronome
-+++ /dev/null
-@@ -1,65 +0,0 @@
--Copyright (c) 2017, NETRONOME Systems, Inc. All rights reserved.
--
--Agilio(r) Firmware License Agreement (the "AGREEMENT")
--
--BY INSTALLING OR USING IN ANY MANNER THE SOFTWARE THAT ACCOMPANIES THIS
--AGREEMENT (THE "SOFTWARE") YOU (THE "LICENSEE") ACKNOWLEDGE TO BE BOUND
--BY ALL OF THE TERMS OF THIS AGREEMENT.
--
--LICENSE GRANT. Subject to the terms and conditions set forth herein,
--Netronome Systems, Inc. ("NETRONOME") hereby grants LICENSEE a non-
--exclusive license to use, reproduce and distribute the SOFTWARE
--exclusively in object form.
--
--Restrictions. LICENSEE agrees that, (a) unless explicitly provided by
--NETRONOME, the source code of the SOFTWARE is not being provided to
--LICENSEE and is confidential and proprietary to NETRONOME and that
--LICENSEE has no right to access or use such source code. Accordingly,
--LICENSEE agrees that it shall not cause or permit the disassembly,
--decompilation or reverse engineering of the SOFTWARE or otherwise attempt
--to gain access to the source code for the SOFTWARE; and (b) LICENSEE
--agrees that it shall not subject the SOFTWARE in whole or in part, to the
--terms of any software license that requires, as a condition of use,
--modification and/or distribution that the source code of the SOFTWARE, or
--the SOFTWARE be i) disclosed or distributed in source code form; ii)
--licensed for the purpose of making derivative works of the source code of
--the SOFTWARE; or iii) redistribution of the source code of the SOFTWARE
--at no charge.
--
--DISCLAIMER OF ALL WARRANTIES. THE SOFTWARE IS PROVIDED "AS IS" AND WITH
--ALL FAULTS AND NETRONOME AND ITS LICENSORS HEREBY DISCLAIM ALL EXPRESS OR
--IMPLIED WARRANTIES OF ANY KIND, INCLUDING, WITHOUT LIMITATION, ANY
--WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT AND FITNESS FOR A
--PARTICULAR PURPOSE.
--
--LIMITATIONS OF LIABILITY. EXCEPT WHERE PROHIBITED BY LAW, IN NO EVENT
--SHALL NETRONOME OR ANY OTHER PARTY INVOLVED IN THE CREATION, PRODUCTION,
--OR DELIVERY OF THE SOFTWARE BE LIABLE FOR ANY LOSS OF PROFITS, DATA, USE
--OF THE SOFTWARE, DOCUMENTATION OR EQUIPMENT, OR FOR ANY SPECIAL,
--INCIDENTAL, CONSEQUENTIAL, EXEMPLARY, PUNITIVE, MULTIPLE OR OTHER
--DAMAGES, ARISING FROM OR IN CONNECTION WITH THE SOFTWARE EVEN IF
--NETRONOME OR ITS LICENSORS HAVE BEEN MADE AWARE OF THE POSSIBILITY OF
--SUCH DAMAGES AND NOTWITHSTANDING ANY FAILURE OF ESSENTIAL PURPOSE OF ANY
--LIMITED REMEDY.
--
--EXPORT COMPLIANCE. LICENSEE shall not use or export or transmit the
--SOFTWARE, directly or indirectly, to any restricted countries or in any
--other manner that would violate any applicable US and other export
--control and other regulations and laws as shall from time to time govern
--the delivery, license and use of technology, including without limitation
--the Export Administration Act of 1979, as amended, and any regulations
--issued thereunder.
--
--PROHIBITION OF SOFTWARE USE IN HIGH RISK ACTIVITIES AND LIFE
--SUPPORT APPLICATIONS. The SOFTWARE is not designed, manufactured or
--intended for use as on-line control equipment in hazardous environments
--requiring fail-safe performance, such as in the operation of nuclear
--facilities, aircraft navigation or communications systems, air traffic
--control, life support systems, human implantation or any other
--application where product failure could lead to loss of life or
--catastrophic property damage or weapons systems, in which the failure of
--the SOFTWARE could lead directly to death, personal injury, or severe
--physical or environmental damage ("High Risk Activities"). Accordingly
--NETRONOME and, where applicable, NETRONOME'S third party licensors
--specifically disclaim any express or implied warranty of fitness for High
--Risk Activities.
-diff --git a/LICENCE.cavium b/LICENCE.cavium
-deleted file mode 100644
-index 5d2a2bb..0000000
---- a/LICENCE.cavium
-+++ /dev/null
+diff -ruN acc-step1/LICENCE.cavium acc-step2/LICENCE.cavium
+--- acc-step1/LICENCE.cavium	2025-11-18 03:44:45.786249711 +0000
++++ acc-step2/LICENCE.cavium	1970-01-01 00:00:00.000000000 +0000
 @@ -1,59 +0,0 @@
 -Copyright © 2015, Cavium, Inc. All rights reserved.
 -
@@ -177,11 +84,9 @@ index 5d2a2bb..0000000
 -(c) anyone who is engaged in activities related to the design, development,
 -production, or use of nuclear materials, nuclear facilities, nuclear weapons,
 -missiles or chemical or biological weapons.
-diff --git a/LICENCE.cavium_liquidio b/LICENCE.cavium_liquidio
-deleted file mode 100644
-index 250b9fe..0000000
---- a/LICENCE.cavium_liquidio
-+++ /dev/null
+diff -ruN acc-step1/LICENCE.cavium_liquidio acc-step2/LICENCE.cavium_liquidio
+--- acc-step1/LICENCE.cavium_liquidio	2025-11-18 03:44:45.786249711 +0000
++++ acc-step2/LICENCE.cavium_liquidio	1970-01-01 00:00:00.000000000 +0000
 @@ -1,68 +0,0 @@
 -This file contains licences pertaining to the following firmwares for
 -LiquidIO (c) adapters
@@ -251,11 +156,78 @@ index 250b9fe..0000000
 -(c) anyone who is engaged in activities related to the design, development,
 -production, or use of nuclear materials, nuclear facilities, nuclear weapons,
 -missiles or chemical or biological weapons.
-diff --git a/LICENCE.qat_firmware b/LICENCE.qat_firmware
-deleted file mode 100644
-index 75a4ff1..0000000
---- a/LICENCE.qat_firmware
-+++ /dev/null
+diff -ruN acc-step1/LICENCE.Netronome acc-step2/LICENCE.Netronome
+--- acc-step1/LICENCE.Netronome	2025-11-18 03:44:45.786249711 +0000
++++ acc-step2/LICENCE.Netronome	1970-01-01 00:00:00.000000000 +0000
+@@ -1,65 +0,0 @@
+-Copyright (c) 2017, NETRONOME Systems, Inc. All rights reserved.
+-
+-Agilio(r) Firmware License Agreement (the "AGREEMENT")
+-
+-BY INSTALLING OR USING IN ANY MANNER THE SOFTWARE THAT ACCOMPANIES THIS
+-AGREEMENT (THE "SOFTWARE") YOU (THE "LICENSEE") ACKNOWLEDGE TO BE BOUND
+-BY ALL OF THE TERMS OF THIS AGREEMENT.
+-
+-LICENSE GRANT. Subject to the terms and conditions set forth herein,
+-Netronome Systems, Inc. ("NETRONOME") hereby grants LICENSEE a non-
+-exclusive license to use, reproduce and distribute the SOFTWARE
+-exclusively in object form.
+-
+-Restrictions. LICENSEE agrees that, (a) unless explicitly provided by
+-NETRONOME, the source code of the SOFTWARE is not being provided to
+-LICENSEE and is confidential and proprietary to NETRONOME and that
+-LICENSEE has no right to access or use such source code. Accordingly,
+-LICENSEE agrees that it shall not cause or permit the disassembly,
+-decompilation or reverse engineering of the SOFTWARE or otherwise attempt
+-to gain access to the source code for the SOFTWARE; and (b) LICENSEE
+-agrees that it shall not subject the SOFTWARE in whole or in part, to the
+-terms of any software license that requires, as a condition of use,
+-modification and/or distribution that the source code of the SOFTWARE, or
+-the SOFTWARE be i) disclosed or distributed in source code form; ii)
+-licensed for the purpose of making derivative works of the source code of
+-the SOFTWARE; or iii) redistribution of the source code of the SOFTWARE
+-at no charge.
+-
+-DISCLAIMER OF ALL WARRANTIES. THE SOFTWARE IS PROVIDED "AS IS" AND WITH
+-ALL FAULTS AND NETRONOME AND ITS LICENSORS HEREBY DISCLAIM ALL EXPRESS OR
+-IMPLIED WARRANTIES OF ANY KIND, INCLUDING, WITHOUT LIMITATION, ANY
+-WARRANTIES OF MERCHANTABILITY, NON-INFRINGEMENT AND FITNESS FOR A
+-PARTICULAR PURPOSE.
+-
+-LIMITATIONS OF LIABILITY. EXCEPT WHERE PROHIBITED BY LAW, IN NO EVENT
+-SHALL NETRONOME OR ANY OTHER PARTY INVOLVED IN THE CREATION, PRODUCTION,
+-OR DELIVERY OF THE SOFTWARE BE LIABLE FOR ANY LOSS OF PROFITS, DATA, USE
+-OF THE SOFTWARE, DOCUMENTATION OR EQUIPMENT, OR FOR ANY SPECIAL,
+-INCIDENTAL, CONSEQUENTIAL, EXEMPLARY, PUNITIVE, MULTIPLE OR OTHER
+-DAMAGES, ARISING FROM OR IN CONNECTION WITH THE SOFTWARE EVEN IF
+-NETRONOME OR ITS LICENSORS HAVE BEEN MADE AWARE OF THE POSSIBILITY OF
+-SUCH DAMAGES AND NOTWITHSTANDING ANY FAILURE OF ESSENTIAL PURPOSE OF ANY
+-LIMITED REMEDY.
+-
+-EXPORT COMPLIANCE. LICENSEE shall not use or export or transmit the
+-SOFTWARE, directly or indirectly, to any restricted countries or in any
+-other manner that would violate any applicable US and other export
+-control and other regulations and laws as shall from time to time govern
+-the delivery, license and use of technology, including without limitation
+-the Export Administration Act of 1979, as amended, and any regulations
+-issued thereunder.
+-
+-PROHIBITION OF SOFTWARE USE IN HIGH RISK ACTIVITIES AND LIFE
+-SUPPORT APPLICATIONS. The SOFTWARE is not designed, manufactured or
+-intended for use as on-line control equipment in hazardous environments
+-requiring fail-safe performance, such as in the operation of nuclear
+-facilities, aircraft navigation or communications systems, air traffic
+-control, life support systems, human implantation or any other
+-application where product failure could lead to loss of life or
+-catastrophic property damage or weapons systems, in which the failure of
+-the SOFTWARE could lead directly to death, personal injury, or severe
+-physical or environmental damage ("High Risk Activities"). Accordingly
+-NETRONOME and, where applicable, NETRONOME'S third party licensors
+-specifically disclaim any express or implied warranty of fitness for High
+-Risk Activities.
+diff -ruN acc-step1/LICENCE.qat_firmware acc-step2/LICENCE.qat_firmware
+--- acc-step1/LICENCE.qat_firmware	2025-11-18 03:44:45.789092554 +0000
++++ acc-step2/LICENCE.qat_firmware	1970-01-01 00:00:00.000000000 +0000
 @@ -1,36 +0,0 @@
 -Copyright (c) 2014-2023 Intel Corporation.
 -All rights reserved.
@@ -293,11 +265,9 @@ index 75a4ff1..0000000
 -TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
 -USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
 -DAMAGE.
-diff --git a/LICENCE.ti-keystone b/LICENCE.ti-keystone
-deleted file mode 100644
-index 62cc3b3..0000000
---- a/LICENCE.ti-keystone
-+++ /dev/null
+diff -ruN acc-step1/LICENCE.ti-keystone acc-step2/LICENCE.ti-keystone
+--- acc-step1/LICENCE.ti-keystone	2025-11-18 03:44:45.790092557 +0000
++++ acc-step2/LICENCE.ti-keystone	1970-01-01 00:00:00.000000000 +0000
 @@ -1,61 +0,0 @@
 -Copyright (c) 2015 Texas Instruments Incorporated
 -
@@ -360,11 +330,9 @@ index 62cc3b3..0000000
 -LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
 -OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 -ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-diff --git a/LICENSE.amd-sev b/LICENSE.amd-sev
-deleted file mode 100644
-index de4d948..0000000
---- a/LICENSE.amd-sev
-+++ /dev/null
+diff -ruN acc-step1/LICENSE.amd-sev acc-step2/LICENSE.amd-sev
+--- acc-step1/LICENSE.amd-sev	2025-11-18 03:44:45.791092559 +0000
++++ acc-step2/LICENSE.amd-sev	1970-01-01 00:00:00.000000000 +0000
 @@ -1,64 +0,0 @@
 -Copyright (C) 2015-2019 Advanced Micro Devices, Inc., All rights reserved.
 -
@@ -430,11 +398,9 @@ index de4d948..0000000
 -Group listings, or for additional information about the EAR or Your
 -obligations under those regulations, please refer to the U.S. Bureau
 -of Industry and Security’s website at ttp://www.bis.doc.gov/.
-diff --git a/LICENSE.nxp_mc_firmware b/LICENSE.nxp_mc_firmware
-deleted file mode 100644
-index 4b12f58..0000000
---- a/LICENSE.nxp_mc_firmware
-+++ /dev/null
+diff -ruN acc-step1/LICENSE.nxp_mc_firmware acc-step2/LICENSE.nxp_mc_firmware
+--- acc-step1/LICENSE.nxp_mc_firmware	2025-11-18 03:44:45.793092564 +0000
++++ acc-step2/LICENSE.nxp_mc_firmware	1970-01-01 00:00:00.000000000 +0000
 @@ -1,127 +0,0 @@
 -Copyright (c) 2018 NXP. All rights reserved.
 -
@@ -563,11 +529,10 @@ index 4b12f58..0000000
 -BINARY SOFTWARE
 -Only software in binary form may be provided under this Agreement
 -
-diff --git a/WHENCE b/WHENCE
-index f6b0299..58e9ca1 100644
---- a/WHENCE
-+++ b/WHENCE
-@@ -1071,19 +1071,6 @@ License: Redistributable.  See LICENCE.myri10ge_firmware for details.
+diff -ruN acc-step1/WHENCE acc-step2/WHENCE
+--- acc-step1/WHENCE	2025-11-18 03:44:46.007405425 +0000
++++ acc-step2/WHENCE	2025-11-18 03:45:07.226306627 +0000
+@@ -2758,25 +2758,6 @@
  
  --------------------------------------------------------------------------
  
@@ -576,9 +541,15 @@ index f6b0299..58e9ca1 100644
 -File: amd/amd_sev_fam17h_model0xh.sbin
 -Version: 2022-2-25
 -File: amd/amd_sev_fam17h_model3xh.sbin
--Version: 2022-2-25
+-Version: 2024-8-20
 -File: amd/amd_sev_fam19h_model0xh.sbin
--Version: 2022-2-25
+-Version: 2025-2-20
+-File: amd/amd_sev_fam19h_model1xh.sbin
+-Version: 2025-2-20
+-File: amd/amd_sev_fam19h_modelaxh.sbin
+-Version: 2025-2-20
+-File: amd/amd_sev_fam1ah_model0xh.sbin
+-Version: 2025-2-20
 -
 -License: Redistributable. See LICENSE.amd-sev for details
 -
@@ -586,28 +557,52 @@ index f6b0299..58e9ca1 100644
 -
  Driver: microcode_amd - AMD CPU Microcode Update Driver for Linux
  
- File: amd-ucode/microcode_amd.bin
-@@ -1107,52 +1094,6 @@ License: Redistributable. See LICENSE.amd-ucode for details
+ RawFile: amd-ucode/microcode_amd.bin
+@@ -2825,39 +2806,6 @@
  
  --------------------------------------------------------------------------
  
 -Driver: qat - Intel(R) QAT crypto accelerator
 -
--File: qat_895xcc.bin
--File: qat_895xcc_mmp.bin
--File: qat_c3xxx.bin
--File: qat_c3xxx_mmp.bin
--File: qat_c62x.bin
--File: qat_c62x_mmp.bin
--Link: qat_mmp.bin -> qat_895xcc_mmp.bin
--File: qat_4xxx.bin
--File: qat_4xxx_mmp.bin
+-File: intel/qat/qat_895xcc.bin
+-Link: qat_895xcc.bin -> intel/qat/qat_895xcc.bin
+-File: intel/qat/qat_895xcc_mmp.bin
+-Link: qat_895xcc_mmp.bin -> intel/qat/qat_895xcc_mmp.bin
+-Link: qat_mmp.bin -> intel/qat/qat_895xcc_mmp.bin
+-Link: intel/qat/qat_mmp.bin -> qat_895xcc_mmp.bin
+-File: intel/qat/qat_c3xxx.bin
+-Link: qat_c3xxx.bin -> intel/qat/qat_c3xxx.bin
+-File: intel/qat/qat_c3xxx_mmp.bin
+-Link: qat_c3xxx_mmp.bin -> intel/qat/qat_c3xxx_mmp.bin
+-File: intel/qat/qat_c62x.bin
+-Link: qat_c62x.bin -> intel/qat/qat_c62x.bin
+-File: intel/qat/qat_c62x_mmp.bin
+-Link: qat_c62x_mmp.bin -> intel/qat/qat_c62x_mmp.bin
+-File: intel/qat/qat_4xxx.bin
+-Link: qat_4xxx.bin -> intel/qat/qat_4xxx.bin
+-File: intel/qat/qat_4xxx_mmp.bin
+-Link: qat_4xxx_mmp.bin -> intel/qat/qat_4xxx_mmp.bin
+-File: intel/qat/qat_402xx.bin
+-Link: qat_402xx.bin -> intel/qat/qat_402xx.bin
+-File: intel/qat/qat_402xx_mmp.bin
+-Link: qat_402xx_mmp.bin -> intel/qat/qat_402xx_mmp.bin
+-File: intel/qat/qat_420xx.bin
+-Link: qat_420xx.bin -> intel/qat/qat_420xx.bin
+-File: intel/qat/qat_420xx_mmp.bin
+-Link: qat_420xx_mmp.bin -> intel/qat/qat_420xx_mmp.bin
 -
 -Licence: Redistributable. See LICENCE.qat_firmware for details
 -
 ---------------------------------------------------------------------------
 -
--Driver: liquidio -- Cavium LiquidIO driver
+ Driver: rsi - Redpine Signals Inc 91x driver
+ 
+ File: rsi_91x.fw
+@@ -3019,36 +2967,6 @@
+ 
+ --------------------------------------------------------------------------
+ 
+-Driver: liquidio - Cavium LiquidIO driver
 -
 -File: liquidio/lio_23xx_nic.bin
 -Version: v1.7.2
@@ -625,7 +620,7 @@ index f6b0299..58e9ca1 100644
 -
 ---------------------------------------------------------------------------
 -
--Driver: nitrox -- Cavium CNN55XX crypto driver
+-Driver: nitrox - Cavium CNN55XX crypto driver
 -
 -File: cavium/cnn55xx_ae.fw
 -Version: v01
@@ -637,10 +632,10 @@ index f6b0299..58e9ca1 100644
 -
 ---------------------------------------------------------------------------
 -
- Driver: i915 -- Intel Integrated Graphics driver
+ Driver: i915 - Intel Graphics driver
  
  File: i915/skl_dmc_ver1_23.bin
-@@ -1936,14 +1877,6 @@ Licence: Redistributable. See LICENCE.nvidia for details
+@@ -3972,14 +3890,6 @@
  
  --------------------------------------------------------------------------
  
@@ -652,166 +647,13 @@ index f6b0299..58e9ca1 100644
 -
 ---------------------------------------------------------------------------
 -
- Driver: mtk_scp - MediaTek SCP System Control Processing Driver
+ Driver: mwlwifi - Marvell mac80211 driver for 80211ac cards.
  
- File: mediatek/mt8183/scp.img
-@@ -1959,100 +1892,6 @@ Licence: Redistributable. See LICENCE.mediatek for details.
- 
- --------------------------------------------------------------------------
- 
--Driver: nfp - Netronome Flow Processor
--
--Link: netronome/nic_AMDA0081-0001_1x40.nffw -> nic/nic_AMDA0081-0001_1x40.nffw
--Link: netronome/nic_AMDA0097-0001_2x40.nffw -> nic/nic_AMDA0097-0001_2x40.nffw
--Link: netronome/nic_AMDA0099-0001_2x10.nffw -> nic/nic_AMDA0099-0001_2x10.nffw
--Link: netronome/nic_AMDA0081-0001_4x10.nffw -> nic/nic_AMDA0081-0001_4x10.nffw
--Link: netronome/nic_AMDA0097-0001_4x10_1x40.nffw -> nic/nic_AMDA0097-0001_4x10_1x40.nffw
--Link: netronome/nic_AMDA0099-0001_1x10_1x25.nffw -> nic/nic_AMDA0099-0001_1x10_1x25.nffw
--Link: netronome/nic_AMDA0099-0001_2x25.nffw -> nic/nic_AMDA0099-0001_2x25.nffw
--Link: netronome/nic_AMDA0096-0001_2x10.nffw -> nic/nic_AMDA0096-0001_2x10.nffw
--Link: netronome/nic_AMDA0097-0001_8x10.nffw -> nic/nic_AMDA0097-0001_8x10.nffw
--Link: netronome/nic_AMDA0058-0011_2x40.nffw -> nic/nic_AMDA0058-0011_2x40.nffw
--Link: netronome/nic_AMDA0058-0012_2x40.nffw -> nic/nic_AMDA0058-0012_2x40.nffw
--Link: netronome/nic_AMDA0078-0011_1x100.nffw -> nic/nic_AMDA0078-0011_1x100.nffw
--File: netronome/nic/nic_AMDA0081-0001_1x40.nffw
--File: netronome/nic/nic_AMDA0097-0001_2x40.nffw
--File: netronome/nic/nic_AMDA0099-0001_2x10.nffw
--File: netronome/nic/nic_AMDA0081-0001_4x10.nffw
--File: netronome/nic/nic_AMDA0097-0001_4x10_1x40.nffw
--File: netronome/nic/nic_AMDA0099-0001_1x10_1x25.nffw
--File: netronome/nic/nic_AMDA0099-0001_2x25.nffw
--File: netronome/nic/nic_AMDA0096-0001_2x10.nffw
--File: netronome/nic/nic_AMDA0097-0001_8x10.nffw
--File: netronome/nic/nic_AMDA0058-0011_2x40.nffw
--File: netronome/nic/nic_AMDA0058-0012_2x40.nffw
--File: netronome/nic/nic_AMDA0078-0011_1x100.nffw
--File: netronome/nic-sriov/nic_AMDA0081-0001_1x40.nffw
--File: netronome/nic-sriov/nic_AMDA0097-0001_2x40.nffw
--File: netronome/nic-sriov/nic_AMDA0099-0001_2x10.nffw
--File: netronome/nic-sriov/nic_AMDA0081-0001_4x10.nffw
--File: netronome/nic-sriov/nic_AMDA0097-0001_4x10_1x40.nffw
--File: netronome/nic-sriov/nic_AMDA0099-0001_1x10_1x25.nffw
--File: netronome/nic-sriov/nic_AMDA0099-0001_2x25.nffw
--File: netronome/nic-sriov/nic_AMDA0096-0001_2x10.nffw
--File: netronome/nic-sriov/nic_AMDA0097-0001_8x10.nffw
--File: netronome/nic-sriov/nic_AMDA0058-0011_2x40.nffw
--File: netronome/nic-sriov/nic_AMDA0058-0012_2x40.nffw
--File: netronome/nic-sriov/nic_AMDA0078-0011_1x100.nffw
--
--Version: v2.1.16.1
--
--File: netronome/flower/nic_AMDA0099.nffw
--File: netronome/flower/nic_AMDA0096.nffw
--File: netronome/flower/nic_AMDA0097.nffw
--File: netronome/flower/nic_AMDA0058.nffw
--Link: netronome/flower/nic_AMDA0081.nffw -> nic_AMDA0097.nffw
--Link: netronome/flower/nic_AMDA0081-0001_1x40.nffw -> nic_AMDA0081.nffw
--Link: netronome/flower/nic_AMDA0097-0001_2x40.nffw -> nic_AMDA0097.nffw
--Link: netronome/flower/nic_AMDA0099-0001_2x10.nffw -> nic_AMDA0099.nffw
--Link: netronome/flower/nic_AMDA0081-0001_4x10.nffw -> nic_AMDA0081.nffw
--Link: netronome/flower/nic_AMDA0097-0001_4x10_1x40.nffw -> nic_AMDA0097.nffw
--Link: netronome/flower/nic_AMDA0099-0001_2x25.nffw -> nic_AMDA0099.nffw
--Link: netronome/flower/nic_AMDA0096-0001_2x10.nffw -> nic_AMDA0096.nffw
--Link: netronome/flower/nic_AMDA0097-0001_8x10.nffw -> nic_AMDA0097.nffw
--Link: netronome/flower/nic_AMDA0099-0001_1x10_1x25.nffw -> nic_AMDA0099.nffw
--Link: netronome/flower/nic_AMDA0058-0011_1x100.nffw -> nic_AMDA0058.nffw
--Link: netronome/flower/nic_AMDA0058-0011_2x40.nffw -> nic_AMDA0058.nffw
--Link: netronome/flower/nic_AMDA0058-0011_4x10_1x40.nffw -> nic_AMDA0058.nffw
--Link: netronome/flower/nic_AMDA0058-0011_8x10.nffw -> nic_AMDA0058.nffw
--Link: netronome/flower/nic_AMDA0058-0012_1x100.nffw -> nic_AMDA0058.nffw
--Link: netronome/flower/nic_AMDA0058-0012_2x40.nffw -> nic_AMDA0058.nffw
--Link: netronome/flower/nic_AMDA0058-0012_4x10_1x40.nffw -> nic_AMDA0058.nffw
--Link: netronome/flower/nic_AMDA0058-0012_8x10.nffw -> nic_AMDA0058.nffw
--Link: netronome/flower/nic_AMDA0078-0011_1x100.nffw -> nic_AMDA0058.nffw
--Link: netronome/flower/nic_AMDA0078-0011_2x40.nffw -> nic_AMDA0058.nffw
--Link: netronome/flower/nic_AMDA0078-0011_4x10_1x40.nffw -> nic_AMDA0058.nffw
--Link: netronome/flower/nic_AMDA0078-0011_8x10.nffw -> nic_AMDA0058.nffw
--Link: netronome/flower/nic_AMDA0078-0012_1x100.nffw -> nic_AMDA0058.nffw
--Link: netronome/flower/nic_AMDA0078-0012_2x40.nffw -> nic_AMDA0058.nffw
--Link: netronome/flower/nic_AMDA0078-0012_4x10_1x40.nffw -> nic_AMDA0058.nffw
--Link: netronome/flower/nic_AMDA0078-0012_8x10.nffw -> nic_AMDA0058.nffw
--
--Version: AOTC-2.14.A.6
--
--File: netronome/bpf/nic_AMDA0081-0001_1x40.nffw
--File: netronome/bpf/nic_AMDA0097-0001_2x40.nffw
--File: netronome/bpf/nic_AMDA0099-0001_2x10.nffw
--File: netronome/bpf/nic_AMDA0081-0001_4x10.nffw
--File: netronome/bpf/nic_AMDA0097-0001_4x10_1x40.nffw
--File: netronome/bpf/nic_AMDA0099-0001_1x10_1x25.nffw
--File: netronome/bpf/nic_AMDA0099-0001_2x25.nffw
--File: netronome/bpf/nic_AMDA0096-0001_2x10.nffw
--File: netronome/bpf/nic_AMDA0097-0001_8x10.nffw
--File: netronome/bpf/nic_AMDA0058-0011_2x40.nffw
--File: netronome/bpf/nic_AMDA0058-0012_2x40.nffw
--File: netronome/bpf/nic_AMDA0078-0011_1x100.nffw
--
--Version: v2.0.6.124
--
--
--Licence: Redistributable. See LICENCE.Netronome for details
--
----------------------------------------------------------------------------
--
- Driver: imx-sdma - support for i.MX SDMA driver
- 
- File: imx/sdma/sdma-imx6q.bin
-@@ -2211,28 +2050,6 @@ Licence:
+ File: mwlwifi/88W8864.bin
+@@ -5000,26 +4910,6 @@
  
  --------------------------------------------------------------------------
  
--Driver: fsl-mc bus - NXP Management Complex Bus Driver
--
--File: dpaa2/mc/mc_10.10.0_ls1088a.itb
--File: dpaa2/mc/mc_10.10.0_ls2088a.itb
--File: dpaa2/mc/mc_10.10.0_lx2160a.itb
--File: dpaa2/mc/mc_10.14.3_ls1088a.itb
--File: dpaa2/mc/mc_10.14.3_ls2088a.itb
--File: dpaa2/mc/mc_10.14.3_lx2160a.itb
--File: dpaa2/mc/mc_10.16.2_ls1088a.itb
--File: dpaa2/mc/mc_10.16.2_ls2088a.itb
--File: dpaa2/mc/mc_10.16.2_lx2160a.itb
--File: dpaa2/mc/mc_10.18.0_ls1088a.itb
--File: dpaa2/mc/mc_10.18.0_ls2088a.itb
--File: dpaa2/mc/mc_10.18.0_lx2160a.itb
--File: dpaa2/mc/mc_10.28.1_ls1088a.itb
--File: dpaa2/mc/mc_10.28.1_ls2088a.itb
--File: dpaa2/mc/mc_10.28.1_lx2160a.itb
--
--Licence: Redistributable. See LICENSE.nxp_mc_firmware for details
--
----------------------------------------------------------------------------
--
- Driver: ice - Intel(R) Ethernet Connection E800 Series
- 
- File: intel/ice/ddp/ice-1.3.30.0.pkg
-@@ -2247,21 +2064,6 @@ License: Redistributable. See LICENSE.ice_enhanced for details
- 
- --------------------------------------------------------------------------
- 
--Driver: inside-secure -- Inside Secure EIP197 crypto driver
--
--File: inside-secure/eip197_minifw/ipue.bin
--File: inside-secure/eip197_minifw/ifpp.bin
--
--Licence: Redistributable.
--Copyright (c) 2019 Verimatrix, Inc.
--
--Derived from proprietary unpublished source code.
--Permission is hereby granted for the distribution of this firmware
--as part of Linux or other Open Source operating system kernel,
--provided this copyright notice is accompanying it.
--
--------------------------------------------------
--
- Driver: prestera - Marvell driver for Prestera family ASIC devices
- 
- File: mrvl/prestera/mvsw_prestera_fw-v2.0.img
-@@ -2273,23 +2075,3 @@ File: mrvl/prestera/mvsw_prestera_fw_arm64-v4.1.img
- Licence: Redistributable. See LICENCE.Marvell for details.
- 
- ------------------------------------------------
--
 -Driver: rvu_cptpf - Marvell CPT driver
 -
 -File: mrvl/cpt01/ae.out
@@ -830,7 +672,8 @@ index f6b0299..58e9ca1 100644
 -
 -Licence: Redistributable. See LICENCE.Marvell for details.
 -
-----------------------------------------------------------------------------
--- 
-2.40.1
-
+---------------------------------------------------------------------------
+-
+ Driver: amphion - Amphion VPU(Video Processing Unit) Codec IP driver
+ 
+ File: amphion/vpu/vpu_fw_imx8_dec.bin

@@ -18,29 +18,12 @@ addition.
 * r128 - CONFIG_DRM_R128
 * radeon - CONFIG_DRM_RADEON
 * amdgpu - CONFIG_DRM_AMDGPU
-* nouveau - CONFIG_DRM_NOUVEAU
-* adreno - CONFIG_DRM_MSM
 
 Signed-off-by: Leonard Foerster <foersleo@amazon.com>
 ---
- LICENCE.nvidia      |  131 -----
- LICENSE.amdgpu      |   51 --
- LICENSE.qcom        |  206 -------
- LICENSE.qcom_yamato |   25 -
- LICENSE.radeon      |   51 --
- WHENCE              | 1363 -------------------------------------------
- 6 files changed, 1827 deletions(-)
- delete mode 100644 LICENCE.nvidia
- delete mode 100644 LICENSE.amdgpu
- delete mode 100644 LICENSE.qcom
- delete mode 100644 LICENSE.qcom_yamato
- delete mode 100644 LICENSE.radeon
-
-diff --git a/LICENCE.nvidia b/LICENCE.nvidia
-deleted file mode 100644
-index b99d5a3..0000000
---- a/LICENCE.nvidia
-+++ /dev/null
+diff -ruN gpu-step1/LICENCE.nvidia gpu-step2/LICENCE.nvidia
+--- gpu-step1/LICENCE.nvidia	2025-11-18 03:46:51.993385003 +0000
++++ gpu-step2/LICENCE.nvidia	1970-01-01 00:00:00.000000000 +0000
 @@ -1,131 +0,0 @@
 -           License For Customer Use of NVIDIA Software
 -
@@ -173,13 +156,11 @@ index b99d5a3..0000000
 -restrictions or regulations.  This LICENSE may only be modified in
 -writing signed by an authorized officer of NVIDIA.
 -
-diff --git a/LICENSE.amdgpu b/LICENSE.amdgpu
-deleted file mode 100644
-index 349e207..0000000
---- a/LICENSE.amdgpu
-+++ /dev/null
+diff -ruN gpu-step1/LICENSE.amdgpu gpu-step2/LICENSE.amdgpu
+--- gpu-step1/LICENSE.amdgpu	2025-11-18 03:46:51.996385010 +0000
++++ gpu-step2/LICENSE.amdgpu	1970-01-01 00:00:00.000000000 +0000
 @@ -1,51 +0,0 @@
--Copyright (C) 2023  Advanced Micro Devices, Inc. All rights reserved.
+-Copyright (C) 2024  Advanced Micro Devices, Inc. All rights reserved.
 -
 -REDISTRIBUTION: Permission is hereby granted, free of any license fees,
 -to any person obtaining a copy of this microcode (the "Software"), to
@@ -230,11 +211,9 @@ index 349e207..0000000
 -U.S. Department of Commerce and International Traffic in Arm Regulations
 -administered by the U.S. Department of State.  These laws include
 -restrictions on destinations, end users and end use.
-diff --git a/LICENSE.qcom b/LICENSE.qcom
-deleted file mode 100644
-index faacf9c..0000000
---- a/LICENSE.qcom
-+++ /dev/null
+diff -ruN gpu-step1/LICENSE.qcom gpu-step2/LICENSE.qcom
+--- gpu-step1/LICENSE.qcom	2025-11-18 03:46:51.998385015 +0000
++++ gpu-step2/LICENSE.qcom	1970-01-01 00:00:00.000000000 +0000
 @@ -1,206 +0,0 @@
 -PLEASE READ THIS LICENSE AGREEMENT ("AGREEMENT") CAREFULLY.  THIS AGREEMENT IS
 -A BINDING LEGAL AGREEMENT ENTERED INTO BY AND BETWEEN YOU (OR IF YOU ARE
@@ -442,11 +421,9 @@ index faacf9c..0000000
 -province of Quebec, Canada, the following applies: The Parties hereby confirm
 -they have requested this Agreement and all related documents be prepared
 -in English.
-diff --git a/LICENSE.qcom_yamato b/LICENSE.qcom_yamato
-deleted file mode 100644
-index 1fd702b..0000000
---- a/LICENSE.qcom_yamato
-+++ /dev/null
+diff -ruN gpu-step1/LICENSE.qcom_yamato gpu-step2/LICENSE.qcom_yamato
+--- gpu-step1/LICENSE.qcom_yamato	2025-11-18 03:46:51.998385015 +0000
++++ gpu-step2/LICENSE.qcom_yamato	1970-01-01 00:00:00.000000000 +0000
 @@ -1,25 +0,0 @@
 -Copyright (c) 2008-2011, QUALCOMM Incorporated. All rights reserved.
 -
@@ -473,11 +450,9 @@ index 1fd702b..0000000
 -CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 -ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 -POSSIBILITY OF SUCH DAMAGE.
-diff --git a/LICENSE.radeon b/LICENSE.radeon
-deleted file mode 100644
-index b05e714..0000000
---- a/LICENSE.radeon
-+++ /dev/null
+diff -ruN gpu-step1/LICENSE.radeon gpu-step2/LICENSE.radeon
+--- gpu-step1/LICENSE.radeon	2025-11-18 03:46:51.998385015 +0000
++++ gpu-step2/LICENSE.radeon	1970-01-01 00:00:00.000000000 +0000
 @@ -1,51 +0,0 @@
 -Copyright (C) 2009-2017  Advanced Micro Devices, Inc. All rights reserved.
 -
@@ -530,11 +505,10 @@ index b05e714..0000000
 -U.S. Department of Commerce and International Traffic in Arm Regulations
 -administered by the U.S. Department of State.  These laws include
 -restrictions on destinations, end users and end use.
-diff --git a/WHENCE b/WHENCE
-index 58e9ca1..3bb6523 100644
---- a/WHENCE
-+++ b/WHENCE
-@@ -123,904 +123,6 @@ Available from http://ldriver.qlogic.com/firmware/netxen_nic/new/
+diff -ruN gpu-step1/WHENCE gpu-step2/WHENCE
+--- gpu-step1/WHENCE	2025-11-18 03:46:52.210707520 +0000
++++ gpu-step2/WHENCE	2025-11-18 03:47:14.325766229 +0000
+@@ -757,294 +757,6 @@
  
  --------------------------------------------------------------------------
  
@@ -543,28 +517,7 @@ index 58e9ca1..3bb6523 100644
 -File: matrox/g200_warp.fw
 -File: matrox/g400_warp.fw
 -
--Licence:
--
--Copyright 1999 Matrox Graphics Inc.
--All Rights Reserved.
--
--Permission is hereby granted, free of charge, to any person obtaining a
--copy of this software and associated documentation files (the "Software"),
--to deal in the Software without restriction, including without limitation
--the rights to use, copy, modify, merge, publish, distribute, sublicense,
--and/or sell copies of the Software, and to permit persons to whom the
--Software is furnished to do so, subject to the following conditions:
--
--The above copyright notice and this permission notice shall be included
--in all copies or substantial portions of the Software.
--
--THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
--OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
--FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
--MATROX GRAPHICS INC., OR ANY OTHER CONTRIBUTORS BE LIABLE FOR ANY CLAIM,
--DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
--OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
--OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-Licence: Redistributable. See LICENSE.mga for details.
 -
 -Found in hex form in kernel source.
 -
@@ -574,28 +527,9 @@ index 58e9ca1..3bb6523 100644
 -
 -File: r128/r128_cce.bin
 -
--Licence:
+-Licence: MIT
 -
 -Copyright 2000 Advanced Micro Devices, Inc.
--
-- * Permission is hereby granted, free of charge, to any person obtaining a
-- * copy of this software and associated documentation files (the "Software"),
-- * to deal in the Software without restriction, including without limitation
-- * the rights to use, copy, modify, merge, publish, distribute, sublicense,
-- * and/or sell copies of the Software, and to permit persons to whom the
-- * Software is furnished to do so, subject to the following conditions:
-- *
-- * The above copyright notice and this permission notice (including the next
-- * paragraph) shall be included in all copies or substantial portions of the
-- * Software.
-- *
-- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
-- * PRECISION INSIGHT AND/OR ITS SUPPLIERS BE LIABLE FOR ANY CLAIM, DAMAGES OR
-- * OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-- * ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-- * DEALINGS IN THE SOFTWARE.
 -
 -Found in decimal form in kernel source.
 -
@@ -631,29 +565,9 @@ index 58e9ca1..3bb6523 100644
 -File: radeon/RV710_pfp.bin
 -File: radeon/RV710_me.bin
 -
--Licence:
+-Licence: MIT
 -
-- * Copyright 2007-2009 Advanced Micro Devices, Inc.
-- * All Rights Reserved.
-- *
-- * Permission is hereby granted, free of charge, to any person obtaining a
-- * copy of this software and associated documentation files (the "Software"),
-- * to deal in the Software without restriction, including without limitation
-- * the rights to use, copy, modify, merge, publish, distribute, sublicense,
-- * and/or sell copies of the Software, and to permit persons to whom the
-- * Software is furnished to do so, subject to the following conditions:
-- *
-- * The above copyright notice and this permission notice (including the next
-- * paragraph) shall be included in all copies or substantial portions of the
-- * Software.
-- *
-- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
-- * IN NO EVENT SHALL THE COPYRIGHT OWNER(S) AND/OR ITS SUPPLIERS BE
-- * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-- * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-- * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-Copyright 2007-2009 Advanced Micro Devices, Inc.
 -
 -Found in hex form in kernel source.
 -
@@ -886,6 +800,13 @@ index 58e9ca1..3bb6523 100644
 -
 ---------------------------------------------------------------------------
 -
+ Driver: as21xxx - Aeonsemi AS21x1x 1G/2.5G/5G/10G Ethernet Phy
+ 
+ File: aeonsemi/as21x1x_fw.bin
+@@ -1071,686 +783,6 @@
+ 
+ --------------------------------------------------------------------------
+ 
 -Driver: amdgpu - AMD Radeon
 -
 -File: amdgpu/tahiti_ce.bin
@@ -1112,6 +1033,7 @@ index 58e9ca1..3bb6523 100644
 -File: amdgpu/vega10_asd.bin
 -File: amdgpu/vega10_ce.bin
 -File: amdgpu/vega10_gpu_info.bin
+-File: amdgpu/vega10_ip_discovery.bin
 -File: amdgpu/vega10_me.bin
 -File: amdgpu/vega10_mec.bin
 -File: amdgpu/vega10_mec2.bin
@@ -1126,6 +1048,7 @@ index 58e9ca1..3bb6523 100644
 -File: amdgpu/vega12_asd.bin
 -File: amdgpu/vega12_ce.bin
 -File: amdgpu/vega12_gpu_info.bin
+-File: amdgpu/vega12_ip_discovery.bin
 -File: amdgpu/vega12_me.bin
 -File: amdgpu/vega12_mec.bin
 -File: amdgpu/vega12_mec2.bin
@@ -1139,6 +1062,7 @@ index 58e9ca1..3bb6523 100644
 -File: amdgpu/vega12_vce.bin
 -File: amdgpu/vega20_asd.bin
 -File: amdgpu/vega20_ce.bin
+-File: amdgpu/vega20_ip_discovery.bin
 -File: amdgpu/vega20_me.bin
 -File: amdgpu/vega20_mec.bin
 -File: amdgpu/vega20_mec2.bin
@@ -1154,6 +1078,7 @@ index 58e9ca1..3bb6523 100644
 -File: amdgpu/raven_asd.bin
 -File: amdgpu/raven_ce.bin
 -File: amdgpu/raven_gpu_info.bin
+-File: amdgpu/raven_ip_discovery.bin
 -File: amdgpu/raven_me.bin
 -File: amdgpu/raven_mec.bin
 -File: amdgpu/raven_mec2.bin
@@ -1167,6 +1092,7 @@ index 58e9ca1..3bb6523 100644
 -File: amdgpu/picasso_asd.bin
 -File: amdgpu/picasso_ce.bin
 -File: amdgpu/picasso_gpu_info.bin
+-File: amdgpu/picasso_ip_discovery.bin
 -File: amdgpu/picasso_me.bin
 -File: amdgpu/picasso_mec.bin
 -File: amdgpu/picasso_mec2.bin
@@ -1179,6 +1105,7 @@ index 58e9ca1..3bb6523 100644
 -File: amdgpu/raven2_asd.bin
 -File: amdgpu/raven2_ce.bin
 -File: amdgpu/raven2_gpu_info.bin
+-File: amdgpu/raven2_ip_discovery.bin
 -File: amdgpu/raven2_me.bin
 -File: amdgpu/raven2_mec.bin
 -File: amdgpu/raven2_mec2.bin
@@ -1284,6 +1211,7 @@ index 58e9ca1..3bb6523 100644
 -File: amdgpu/navy_flounder_vcn.bin
 -File: amdgpu/arcturus_asd.bin
 -File: amdgpu/arcturus_gpu_info.bin
+-File: amdgpu/arcturus_ip_discovery.bin
 -File: amdgpu/arcturus_mec2.bin
 -File: amdgpu/arcturus_mec.bin
 -File: amdgpu/arcturus_rlc.bin
@@ -1347,6 +1275,7 @@ index 58e9ca1..3bb6523 100644
 -File: amdgpu/cyan_skillfish2_rlc.bin
 -File: amdgpu/cyan_skillfish2_sdma.bin
 -File: amdgpu/cyan_skillfish2_sdma1.bin
+-File: amdgpu/aldebaran_ip_discovery.bin
 -File: amdgpu/aldebaran_mec2.bin
 -File: amdgpu/aldebaran_mec.bin
 -File: amdgpu/aldebaran_rlc.bin
@@ -1357,6 +1286,15 @@ index 58e9ca1..3bb6523 100644
 -File: amdgpu/aldebaran_sos.bin
 -File: amdgpu/aldebaran_ta.bin
 -File: amdgpu/aldebaran_vcn.bin
+-File: amdgpu/gc_9_4_3_mec.bin
+-File: amdgpu/gc_9_4_3_rlc.bin
+-File: amdgpu/gc_9_4_3_sjt_mec.bin
+-File: amdgpu/gc_9_4_4_mec.bin
+-File: amdgpu/gc_9_4_4_rlc.bin
+-File: amdgpu/gc_9_4_4_sjt_mec.bin
+-File: amdgpu/gc_9_5_0_mec.bin
+-File: amdgpu/gc_9_5_0_rlc.bin
+-File: amdgpu/gc_9_5_0_sjt_mec.bin
 -File: amdgpu/gc_10_3_6_ce.bin
 -File: amdgpu/gc_10_3_6_me.bin
 -File: amdgpu/gc_10_3_6_mec.bin
@@ -1370,6 +1308,7 @@ index 58e9ca1..3bb6523 100644
 -File: amdgpu/gc_10_3_7_pfp.bin
 -File: amdgpu/gc_10_3_7_rlc.bin
 -File: amdgpu/gc_11_0_0_imu.bin
+-File: amdgpu/gc_11_0_0_imu_kicker.bin
 -File: amdgpu/gc_11_0_0_me.bin
 -File: amdgpu/gc_11_0_0_mec.bin
 -File: amdgpu/gc_11_0_0_mes1.bin
@@ -1377,6 +1316,8 @@ index 58e9ca1..3bb6523 100644
 -File: amdgpu/gc_11_0_0_mes_2.bin
 -File: amdgpu/gc_11_0_0_pfp.bin
 -File: amdgpu/gc_11_0_0_rlc.bin
+-File: amdgpu/gc_11_0_0_rlc_kicker.bin
+-File: amdgpu/gc_11_0_0_rlc_1.bin
 -File: amdgpu/gc_11_0_1_imu.bin
 -File: amdgpu/gc_11_0_1_me.bin
 -File: amdgpu/gc_11_0_1_mec.bin
@@ -1393,6 +1334,13 @@ index 58e9ca1..3bb6523 100644
 -File: amdgpu/gc_11_0_2_mes_2.bin
 -File: amdgpu/gc_11_0_2_pfp.bin
 -File: amdgpu/gc_11_0_2_rlc.bin
+-File: amdgpu/gc_11_0_3_imu.bin
+-File: amdgpu/gc_11_0_3_me.bin
+-File: amdgpu/gc_11_0_3_mec.bin
+-File: amdgpu/gc_11_0_3_mes1.bin
+-File: amdgpu/gc_11_0_3_mes_2.bin
+-File: amdgpu/gc_11_0_3_pfp.bin
+-File: amdgpu/gc_11_0_3_rlc.bin
 -File: amdgpu/gc_11_0_4_imu.bin
 -File: amdgpu/gc_11_0_4_me.bin
 -File: amdgpu/gc_11_0_4_mec.bin
@@ -1401,523 +1349,480 @@ index 58e9ca1..3bb6523 100644
 -File: amdgpu/gc_11_0_4_mes_2.bin
 -File: amdgpu/gc_11_0_4_pfp.bin
 -File: amdgpu/gc_11_0_4_rlc.bin
+-File: amdgpu/gc_11_5_0_imu.bin
+-File: amdgpu/gc_11_5_0_me.bin
+-File: amdgpu/gc_11_5_0_mec.bin
+-File: amdgpu/gc_11_5_0_mes1.bin
+-File: amdgpu/gc_11_5_0_mes_2.bin
+-File: amdgpu/gc_11_5_0_pfp.bin
+-File: amdgpu/gc_11_5_0_rlc.bin
+-File: amdgpu/gc_11_5_1_imu.bin
+-File: amdgpu/gc_11_5_1_me.bin
+-File: amdgpu/gc_11_5_1_mec.bin
+-File: amdgpu/gc_11_5_1_mes1.bin
+-File: amdgpu/gc_11_5_1_mes_2.bin
+-File: amdgpu/gc_11_5_1_pfp.bin
+-File: amdgpu/gc_11_5_1_rlc.bin
+-File: amdgpu/gc_11_5_2_imu.bin
+-File: amdgpu/gc_11_5_2_me.bin
+-File: amdgpu/gc_11_5_2_mec.bin
+-File: amdgpu/gc_11_5_2_mes1.bin
+-File: amdgpu/gc_11_5_2_mes_2.bin
+-File: amdgpu/gc_11_5_2_pfp.bin
+-File: amdgpu/gc_11_5_2_rlc.bin
+-File: amdgpu/gc_11_5_3_imu.bin
+-File: amdgpu/gc_11_5_3_me.bin
+-File: amdgpu/gc_11_5_3_mec.bin
+-File: amdgpu/gc_11_5_3_mes1.bin
+-File: amdgpu/gc_11_5_3_mes_2.bin
+-File: amdgpu/gc_11_5_3_pfp.bin
+-File: amdgpu/gc_11_5_3_rlc.bin
+-File: amdgpu/gc_12_0_0_imu.bin
+-File: amdgpu/gc_12_0_0_me.bin
+-File: amdgpu/gc_12_0_0_mec.bin
+-File: amdgpu/gc_12_0_0_mes1.bin
+-File: amdgpu/gc_12_0_0_mes.bin
+-File: amdgpu/gc_12_0_0_pfp.bin
+-File: amdgpu/gc_12_0_0_rlc.bin
+-File: amdgpu/gc_12_0_0_toc.bin
+-File: amdgpu/gc_12_0_0_uni_mes.bin
+-File: amdgpu/gc_12_0_1_imu.bin
+-File: amdgpu/gc_12_0_1_imu_kicker.bin
+-File: amdgpu/gc_12_0_1_me.bin
+-File: amdgpu/gc_12_0_1_mec.bin
+-File: amdgpu/gc_12_0_1_mes1.bin
+-File: amdgpu/gc_12_0_1_mes.bin
+-File: amdgpu/gc_12_0_1_pfp.bin
+-File: amdgpu/gc_12_0_1_rlc.bin
+-File: amdgpu/gc_12_0_1_rlc_kicker.bin
+-File: amdgpu/gc_12_0_1_toc.bin
+-File: amdgpu/gc_12_0_1_uni_mes.bin
 -File: amdgpu/dcn_3_1_4_dmcub.bin
 -File: amdgpu/dcn_3_1_5_dmcub.bin
 -File: amdgpu/dcn_3_1_6_dmcub.bin
 -File: amdgpu/dcn_3_2_0_dmcub.bin
 -File: amdgpu/dcn_3_2_1_dmcub.bin
+-File: amdgpu/dcn_3_5_dmcub.bin
+-File: amdgpu/dcn_3_5_1_dmcub.bin
+-File: amdgpu/dcn_3_6_dmcub.bin
+-File: amdgpu/dcn_4_0_1_dmcub.bin
 -File: amdgpu/psp_13_0_0_sos.bin
+-File: amdgpu/psp_13_0_0_sos_kicker.bin
 -File: amdgpu/psp_13_0_0_ta.bin
+-File: amdgpu/psp_13_0_0_ta_kicker.bin
 -File: amdgpu/psp_13_0_4_ta.bin
 -File: amdgpu/psp_13_0_4_toc.bin
 -File: amdgpu/psp_13_0_5_asd.bin
 -File: amdgpu/psp_13_0_5_ta.bin
 -File: amdgpu/psp_13_0_5_toc.bin
+-File: amdgpu/psp_13_0_6_sos.bin
+-File: amdgpu/psp_13_0_6_ta.bin
 -File: amdgpu/psp_13_0_7_sos.bin
 -File: amdgpu/psp_13_0_7_ta.bin
 -File: amdgpu/psp_13_0_8_asd.bin
 -File: amdgpu/psp_13_0_8_ta.bin
 -File: amdgpu/psp_13_0_8_toc.bin
+-File: amdgpu/psp_13_0_10_sos.bin
+-File: amdgpu/psp_13_0_10_ta.bin
 -File: amdgpu/psp_13_0_11_ta.bin
 -File: amdgpu/psp_13_0_11_toc.bin
+-File: amdgpu/psp_13_0_12_sos.bin
+-File: amdgpu/psp_13_0_12_ta.bin
+-File: amdgpu/psp_13_0_14_sos.bin
+-File: amdgpu/psp_13_0_14_ta.bin
+-File: amdgpu/psp_14_0_0_ta.bin
+-File: amdgpu/psp_14_0_0_toc.bin
+-File: amdgpu/psp_14_0_1_ta.bin
+-File: amdgpu/psp_14_0_1_toc.bin
+-File: amdgpu/psp_14_0_2_sos.bin
+-File: amdgpu/psp_14_0_2_ta.bin
+-File: amdgpu/psp_14_0_3_sos.bin
+-File: amdgpu/psp_14_0_3_sos_kicker.bin
+-File: amdgpu/psp_14_0_3_ta.bin
+-File: amdgpu/psp_14_0_3_ta_kicker.bin
+-File: amdgpu/psp_14_0_4_ta.bin
+-File: amdgpu/psp_14_0_4_toc.bin
+-File: amdgpu/psp_14_0_5_ta.bin
+-File: amdgpu/psp_14_0_5_toc.bin
+-File: amdgpu/sdma_4_4_2.bin
+-File: amdgpu/sdma_4_4_4.bin
+-File: amdgpu/sdma_4_4_5.bin
 -File: amdgpu/sdma_5_2_6.bin
 -File: amdgpu/sdma_5_2_7.bin
 -File: amdgpu/sdma_6_0_0.bin
 -File: amdgpu/sdma_6_0_1.bin
 -File: amdgpu/sdma_6_0_2.bin
+-File: amdgpu/sdma_6_0_3.bin
+-File: amdgpu/sdma_6_1_0.bin
+-File: amdgpu/sdma_6_1_1.bin
+-File: amdgpu/sdma_6_1_2.bin
+-File: amdgpu/sdma_6_1_3.bin
+-File: amdgpu/sdma_7_0_0.bin
+-File: amdgpu/sdma_7_0_1.bin
 -File: amdgpu/smu_13_0_0.bin
+-File: amdgpu/smu_13_0_0_kicker.bin
+-File: amdgpu/smu_13_0_6.bin
 -File: amdgpu/smu_13_0_7.bin
+-File: amdgpu/smu_13_0_10.bin
+-File: amdgpu/smu_13_0_14.bin
+-File: amdgpu/smu_14_0_2.bin
+-File: amdgpu/smu_14_0_3.bin
+-File: amdgpu/smu_14_0_3_kicker.bin
+-File: amdgpu/umsch_mm_4_0_0.bin
 -File: amdgpu/vcn_3_1_2.bin
 -File: amdgpu/vcn_4_0_0.bin
 -File: amdgpu/vcn_4_0_2.bin
+-File: amdgpu/vcn_4_0_3.bin
 -File: amdgpu/vcn_4_0_4.bin
+-File: amdgpu/vcn_4_0_5.bin
+-File: amdgpu/vcn_4_0_6.bin
+-File: amdgpu/vcn_4_0_6_1.bin
+-File: amdgpu/vcn_5_0_0.bin
+-File: amdgpu/vcn_5_0_1.bin
+-File: amdgpu/vpe_6_1_0.bin
+-File: amdgpu/vpe_6_1_1.bin
+-File: amdgpu/vpe_6_1_3.bin
 -
 -Licence: Redistributable. See LICENSE.amdgpu for details.
 -
 ---------------------------------------------------------------------------
 -
- Driver: qed - QLogic 4xxxx Ethernet Driver Core Module.
+ Driver: amdxdna - AMD Inference processor
  
- File: qed/qed_init_values_zipped-8.4.2.0.bin
-@@ -1459,424 +561,6 @@ Version: HuC API/APB ver 8.5.0 for Meteorlake
- License: Redistributable. See LICENSE.i915 for details
- --------------------------------------------------------------------------
- 
--Driver: nouveau - NVIDIA GPU driver
--
--File: nvidia/gk20a/fecs_data.bin
--File: nvidia/gk20a/fecs_inst.bin
--File: nvidia/gk20a/gpccs_data.bin
--File: nvidia/gk20a/gpccs_inst.bin
--File: nvidia/gk20a/sw_bundle_init.bin
--File: nvidia/gk20a/sw_ctx.bin
--File: nvidia/gk20a/sw_method_init.bin
--File: nvidia/gk20a/sw_nonctx.bin
--File: nvidia/gm200/acr/bl.bin
--File: nvidia/gm200/acr/ucode_load.bin
--File: nvidia/gm200/acr/ucode_unload.bin
--File: nvidia/gm200/gr/fecs_bl.bin
--File: nvidia/gm200/gr/fecs_data.bin
--File: nvidia/gm200/gr/fecs_inst.bin
--File: nvidia/gm200/gr/fecs_sig.bin
--File: nvidia/gm200/gr/gpccs_bl.bin
--File: nvidia/gm200/gr/gpccs_data.bin
--File: nvidia/gm200/gr/gpccs_inst.bin
--File: nvidia/gm200/gr/gpccs_sig.bin
--File: nvidia/gm200/gr/sw_bundle_init.bin
--File: nvidia/gm200/gr/sw_ctx.bin
--File: nvidia/gm200/gr/sw_method_init.bin
--File: nvidia/gm200/gr/sw_nonctx.bin
--Link: nvidia/gm204/acr/bl.bin -> ../../gm200/acr/bl.bin
--Link: nvidia/gm204/acr/ucode_load.bin -> ../../gm200/acr/ucode_load.bin
--Link: nvidia/gm204/acr/ucode_unload.bin -> ../../gm200/acr/ucode_unload.bin
--Link: nvidia/gm204/gr/fecs_bl.bin -> ../../gm200/gr/fecs_bl.bin
--File: nvidia/gm204/gr/fecs_data.bin
--Link: nvidia/gm204/gr/fecs_inst.bin -> ../../gm200/gr/fecs_inst.bin
--File: nvidia/gm204/gr/fecs_sig.bin
--Link: nvidia/gm204/gr/gpccs_bl.bin -> ../../gm200/gr/gpccs_bl.bin
--File: nvidia/gm204/gr/gpccs_data.bin
--Link: nvidia/gm204/gr/gpccs_inst.bin -> ../../gm200/gr/gpccs_inst.bin
--File: nvidia/gm204/gr/gpccs_sig.bin
--Link: nvidia/gm204/gr/sw_bundle_init.bin -> ../../gm200/gr/sw_bundle_init.bin
--Link: nvidia/gm204/gr/sw_ctx.bin -> ../../gm200/gr/sw_ctx.bin
--Link: nvidia/gm204/gr/sw_method_init.bin -> ../../gm200/gr/sw_method_init.bin
--Link: nvidia/gm204/gr/sw_nonctx.bin -> ../../gm200/gr/sw_nonctx.bin
--Link: nvidia/gm206/acr/bl.bin  -> ../../gm200/acr/bl.bin
--File: nvidia/gm206/acr/ucode_load.bin
--File: nvidia/gm206/acr/ucode_unload.bin
--Link: nvidia/gm206/gr/fecs_bl.bin -> ../../gm200/gr/fecs_bl.bin
--File: nvidia/gm206/gr/fecs_data.bin
--Link: nvidia/gm206/gr/fecs_inst.bin -> ../../gm200/gr/fecs_inst.bin
--File: nvidia/gm206/gr/fecs_sig.bin
--Link: nvidia/gm206/gr/gpccs_bl.bin -> ../../gm200/gr/gpccs_bl.bin
--File: nvidia/gm206/gr/gpccs_data.bin
--Link: nvidia/gm206/gr/gpccs_inst.bin -> ../../gm200/gr/gpccs_inst.bin
--File: nvidia/gm206/gr/gpccs_sig.bin
--Link: nvidia/gm206/gr/sw_bundle_init.bin -> ../../gm200/gr/sw_bundle_init.bin
--Link: nvidia/gm206/gr/sw_ctx.bin -> ../../gm200/gr/sw_ctx.bin
--Link: nvidia/gm206/gr/sw_method_init.bin -> ../../gm200/gr/sw_method_init.bin
--Link: nvidia/gm206/gr/sw_nonctx.bin -> ../../gm200/gr/sw_nonctx.bin
--File: nvidia/gm20b/acr/bl.bin
--File: nvidia/gm20b/acr/ucode_load.bin
--File: nvidia/gm20b/gr/fecs_bl.bin
--File: nvidia/gm20b/gr/fecs_data.bin
--File: nvidia/gm20b/gr/fecs_inst.bin
--File: nvidia/gm20b/gr/fecs_sig.bin
--File: nvidia/gm20b/gr/gpccs_data.bin
--File: nvidia/gm20b/gr/gpccs_inst.bin
--File: nvidia/gm20b/gr/sw_bundle_init.bin
--File: nvidia/gm20b/gr/sw_ctx.bin
--Link: nvidia/gm20b/gr/sw_method_init.bin -> ../../gm200/gr/sw_method_init.bin
--File: nvidia/gm20b/gr/sw_nonctx.bin
--File: nvidia/gm20b/pmu/desc.bin
--File: nvidia/gm20b/pmu/image.bin
--File: nvidia/gm20b/pmu/sig.bin
--File: nvidia/gp100/acr/bl.bin
--File: nvidia/gp100/acr/ucode_load.bin
--File: nvidia/gp100/acr/ucode_unload.bin
--Link: nvidia/gp100/gr/fecs_bl.bin -> ../../gm200/gr/fecs_bl.bin
--File: nvidia/gp100/gr/fecs_data.bin
--File: nvidia/gp100/gr/fecs_inst.bin
--File: nvidia/gp100/gr/fecs_sig.bin
--Link: nvidia/gp100/gr/gpccs_bl.bin -> ../../gm200/gr/gpccs_bl.bin
--File: nvidia/gp100/gr/gpccs_data.bin
--File: nvidia/gp100/gr/gpccs_inst.bin
--File: nvidia/gp100/gr/gpccs_sig.bin
--File: nvidia/gp100/gr/sw_bundle_init.bin
--File: nvidia/gp100/gr/sw_ctx.bin
--File: nvidia/gp100/gr/sw_method_init.bin
--File: nvidia/gp100/gr/sw_nonctx.bin
--File: nvidia/gp102/acr/bl.bin
--File: nvidia/gp102/acr/ucode_load.bin
--File: nvidia/gp102/acr/ucode_unload.bin
--File: nvidia/gp102/acr/unload_bl.bin
--Link: nvidia/gp102/gr/fecs_bl.bin -> ../../gm200/gr/fecs_bl.bin
--File: nvidia/gp102/gr/fecs_data.bin
--File: nvidia/gp102/gr/fecs_inst.bin
--File: nvidia/gp102/gr/fecs_sig.bin
--Link: nvidia/gp102/gr/gpccs_bl.bin -> ../../gm200/gr/gpccs_bl.bin
--File: nvidia/gp102/gr/gpccs_data.bin
--File: nvidia/gp102/gr/gpccs_inst.bin
--File: nvidia/gp102/gr/gpccs_sig.bin
--File: nvidia/gp102/gr/sw_bundle_init.bin
--File: nvidia/gp102/gr/sw_ctx.bin
--File: nvidia/gp102/gr/sw_method_init.bin
--File: nvidia/gp102/gr/sw_nonctx.bin
--File: nvidia/gp102/nvdec/scrubber.bin
--File: nvidia/gp102/sec2/desc.bin
--File: nvidia/gp102/sec2/image.bin
--File: nvidia/gp102/sec2/sig.bin
--File: nvidia/gp102/sec2/desc-1.bin
--File: nvidia/gp102/sec2/image-1.bin
--File: nvidia/gp102/sec2/sig-1.bin
--Link: nvidia/gp104/acr/bl.bin -> ../../gp102/acr/bl.bin
--Link: nvidia/gp104/acr/ucode_load.bin -> ../../gp102/acr/ucode_load.bin
--Link: nvidia/gp104/acr/ucode_unload.bin -> ../../gp102/acr/ucode_unload.bin
--Link: nvidia/gp104/acr/unload_bl.bin -> ../../gp102/acr/unload_bl.bin
--Link: nvidia/gp104/gr/fecs_bl.bin -> ../../gp102/gr/fecs_bl.bin
--File: nvidia/gp104/gr/fecs_data.bin
--File: nvidia/gp104/gr/fecs_inst.bin
--File: nvidia/gp104/gr/fecs_sig.bin
--Link: nvidia/gp104/gr/gpccs_bl.bin -> ../../gp102/gr/gpccs_bl.bin
--File: nvidia/gp104/gr/gpccs_data.bin
--File: nvidia/gp104/gr/gpccs_inst.bin
--File: nvidia/gp104/gr/gpccs_sig.bin
--Link: nvidia/gp104/gr/sw_bundle_init.bin -> ../../gp102/gr/sw_bundle_init.bin
--Link: nvidia/gp104/gr/sw_ctx.bin -> ../../gp102/gr/sw_ctx.bin
--Link: nvidia/gp104/gr/sw_method_init.bin -> ../../gp102/gr/sw_method_init.bin
--Link: nvidia/gp104/gr/sw_nonctx.bin -> ../../gp102/gr/sw_nonctx.bin
--Link: nvidia/gp104/nvdec/scrubber.bin -> ../../gp102/nvdec/scrubber.bin
--Link: nvidia/gp104/sec2/desc.bin -> ../../gp102/sec2/desc.bin
--Link: nvidia/gp104/sec2/image.bin -> ../../gp102/sec2/image.bin
--Link: nvidia/gp104/sec2/sig.bin -> ../../gp102/sec2/sig.bin
--Link: nvidia/gp104/sec2/desc-1.bin -> ../../gp102/sec2/desc-1.bin
--Link: nvidia/gp104/sec2/image-1.bin -> ../../gp102/sec2/image-1.bin
--Link: nvidia/gp104/sec2/sig-1.bin -> ../../gp102/sec2/sig-1.bin
--Link: nvidia/gp106/acr/bl.bin -> ../../gp102/acr/bl.bin
--Link: nvidia/gp106/acr/ucode_load.bin -> ../../gp102/acr/ucode_load.bin
--Link: nvidia/gp106/acr/ucode_unload.bin -> ../../gp102/acr/ucode_unload.bin
--Link: nvidia/gp106/acr/unload_bl.bin -> ../../gp102/acr/unload_bl.bin
--Link: nvidia/gp106/gr/fecs_bl.bin -> ../../gp102/gr/fecs_bl.bin
--File: nvidia/gp106/gr/fecs_data.bin
--Link: nvidia/gp106/gr/fecs_inst.bin -> ../../gp102/gr/fecs_inst.bin
--File: nvidia/gp106/gr/fecs_sig.bin
--Link: nvidia/gp106/gr/gpccs_bl.bin -> ../../gp102/gr/gpccs_bl.bin
--File: nvidia/gp106/gr/gpccs_data.bin
--Link: nvidia/gp106/gr/gpccs_inst.bin -> ../../gp102/gr/gpccs_inst.bin
--File: nvidia/gp106/gr/gpccs_sig.bin
--Link: nvidia/gp106/gr/sw_bundle_init.bin -> ../../gp102/gr/sw_bundle_init.bin
--Link: nvidia/gp106/gr/sw_ctx.bin -> ../../gp102/gr/sw_ctx.bin
--Link: nvidia/gp106/gr/sw_method_init.bin -> ../../gp102/gr/sw_method_init.bin
--Link: nvidia/gp106/gr/sw_nonctx.bin -> ../../gp102/gr/sw_nonctx.bin
--Link: nvidia/gp106/nvdec/scrubber.bin -> ../../gp102/nvdec/scrubber.bin
--Link: nvidia/gp106/sec2/desc.bin -> ../../gp102/sec2/desc.bin
--Link: nvidia/gp106/sec2/image.bin -> ../../gp102/sec2/image.bin
--Link: nvidia/gp106/sec2/sig.bin -> ../../gp102/sec2/sig.bin
--Link: nvidia/gp106/sec2/desc-1.bin -> ../../gp102/sec2/desc-1.bin
--Link: nvidia/gp106/sec2/image-1.bin -> ../../gp102/sec2/image-1.bin
--Link: nvidia/gp106/sec2/sig-1.bin -> ../../gp102/sec2/sig-1.bin
--Link: nvidia/gp107/acr/bl.bin -> ../../gp102/acr/bl.bin
--Link: nvidia/gp107/acr/ucode_load.bin -> ../../gp102/acr/ucode_load.bin
--Link: nvidia/gp107/acr/ucode_unload.bin -> ../../gp102/acr/ucode_unload.bin
--Link: nvidia/gp107/acr/unload_bl.bin -> ../../gp102/acr/unload_bl.bin
--File: nvidia/gp107/gr/fecs_bl.bin
--File: nvidia/gp107/gr/fecs_data.bin
--File: nvidia/gp107/gr/fecs_inst.bin
--File: nvidia/gp107/gr/fecs_sig.bin
--File: nvidia/gp107/gr/gpccs_bl.bin
--File: nvidia/gp107/gr/gpccs_data.bin
--File: nvidia/gp107/gr/gpccs_inst.bin
--File: nvidia/gp107/gr/gpccs_sig.bin
--Link: nvidia/gp107/gr/sw_bundle_init.bin -> ../../gp102/gr/sw_bundle_init.bin
--File: nvidia/gp107/gr/sw_ctx.bin
--Link: nvidia/gp107/gr/sw_method_init.bin -> ../../gp102/gr/sw_method_init.bin
--File: nvidia/gp107/gr/sw_nonctx.bin
--Link: nvidia/gp107/nvdec/scrubber.bin -> ../../gp102/nvdec/scrubber.bin
--Link: nvidia/gp107/sec2/desc.bin -> ../../gp102/sec2/desc.bin
--Link: nvidia/gp107/sec2/image.bin -> ../../gp102/sec2/image.bin
--Link: nvidia/gp107/sec2/sig.bin -> ../../gp102/sec2/sig.bin
--Link: nvidia/gp107/sec2/desc-1.bin -> ../../gp102/sec2/desc-1.bin
--Link: nvidia/gp107/sec2/image-1.bin -> ../../gp102/sec2/image-1.bin
--Link: nvidia/gp107/sec2/sig-1.bin -> ../../gp102/sec2/sig-1.bin
--File: nvidia/gp10b/acr/bl.bin
--File: nvidia/gp10b/acr/ucode_load.bin
--File: nvidia/gp10b/gr/fecs_bl.bin
--File: nvidia/gp10b/gr/fecs_data.bin
--File: nvidia/gp10b/gr/fecs_inst.bin
--File: nvidia/gp10b/gr/fecs_sig.bin
--File: nvidia/gp10b/gr/gpccs_bl.bin
--File: nvidia/gp10b/gr/gpccs_data.bin
--File: nvidia/gp10b/gr/gpccs_inst.bin
--File: nvidia/gp10b/gr/gpccs_sig.bin
--File: nvidia/gp10b/gr/sw_bundle_init.bin
--File: nvidia/gp10b/gr/sw_ctx.bin
--File: nvidia/gp10b/gr/sw_method_init.bin
--File: nvidia/gp10b/gr/sw_nonctx.bin
--File: nvidia/gp10b/pmu/desc.bin
--File: nvidia/gp10b/pmu/image.bin
--File: nvidia/gp10b/pmu/sig.bin
--Link: nvidia/gp108/acr/bl.bin -> ../../gp102/acr/bl.bin
--Link: nvidia/gp108/acr/ucode_load.bin -> ../../gp102/acr/ucode_load.bin
--Link: nvidia/gp108/acr/ucode_unload.bin -> ../../gp102/acr/ucode_unload.bin
--Link: nvidia/gp108/acr/unload_bl.bin -> ../../gp102/acr/unload_bl.bin
--File: nvidia/gp108/gr/fecs_bl.bin
--File: nvidia/gp108/gr/fecs_data.bin
--File: nvidia/gp108/gr/fecs_inst.bin
--File: nvidia/gp108/gr/fecs_sig.bin
--File: nvidia/gp108/gr/gpccs_bl.bin
--File: nvidia/gp108/gr/gpccs_data.bin
--File: nvidia/gp108/gr/gpccs_inst.bin
--File: nvidia/gp108/gr/gpccs_sig.bin
--File: nvidia/gp108/gr/sw_bundle_init.bin
--File: nvidia/gp108/gr/sw_ctx.bin
--File: nvidia/gp108/gr/sw_method_init.bin
--File: nvidia/gp108/gr/sw_nonctx.bin
--Link: nvidia/gp108/nvdec/scrubber.bin -> ../../gp102/nvdec/scrubber.bin
--Link: nvidia/gp108/sec2/desc.bin -> ../../gp102/sec2/desc-1.bin
--Link: nvidia/gp108/sec2/image.bin -> ../../gp102/sec2/image-1.bin
--Link: nvidia/gp108/sec2/sig.bin -> ../../gp102/sec2/sig-1.bin
--File: nvidia/gv100/acr/bl.bin
--File: nvidia/gv100/acr/ucode_load.bin
--File: nvidia/gv100/acr/ucode_unload.bin
--File: nvidia/gv100/acr/unload_bl.bin
--File: nvidia/gv100/gr/fecs_bl.bin
--File: nvidia/gv100/gr/fecs_data.bin
--File: nvidia/gv100/gr/fecs_inst.bin
--File: nvidia/gv100/gr/fecs_sig.bin
--File: nvidia/gv100/gr/gpccs_bl.bin
--File: nvidia/gv100/gr/gpccs_data.bin
--File: nvidia/gv100/gr/gpccs_inst.bin
--File: nvidia/gv100/gr/gpccs_sig.bin
--File: nvidia/gv100/gr/sw_bundle_init.bin
--File: nvidia/gv100/gr/sw_ctx.bin
--File: nvidia/gv100/gr/sw_method_init.bin
--File: nvidia/gv100/gr/sw_nonctx.bin
--File: nvidia/gv100/nvdec/scrubber.bin
--File: nvidia/gv100/sec2/desc.bin
--File: nvidia/gv100/sec2/image.bin
--File: nvidia/gv100/sec2/sig.bin
--File: nvidia/tu102/acr/bl.bin
--File: nvidia/tu102/acr/ucode_ahesasc.bin
--File: nvidia/tu102/acr/ucode_asb.bin
--File: nvidia/tu102/acr/unload_bl.bin
--File: nvidia/tu102/acr/ucode_unload.bin
--File: nvidia/tu102/gr/fecs_bl.bin
--File: nvidia/tu102/gr/fecs_data.bin
--File: nvidia/tu102/gr/fecs_inst.bin
--File: nvidia/tu102/gr/fecs_sig.bin
--File: nvidia/tu102/gr/gpccs_bl.bin
--File: nvidia/tu102/gr/gpccs_data.bin
--File: nvidia/tu102/gr/gpccs_inst.bin
--File: nvidia/tu102/gr/gpccs_sig.bin
--File: nvidia/tu102/gr/sw_bundle_init.bin
--File: nvidia/tu102/gr/sw_ctx.bin
--File: nvidia/tu102/gr/sw_method_init.bin
--File: nvidia/tu102/gr/sw_nonctx.bin
--File: nvidia/tu102/gr/sw_veid_bundle_init.bin
--File: nvidia/tu102/nvdec/scrubber.bin
--File: nvidia/tu102/sec2/desc.bin
--File: nvidia/tu102/sec2/image.bin
--File: nvidia/tu102/sec2/sig.bin
--Link: nvidia/tu104/acr/bl.bin -> ../../tu102/acr/bl.bin
--Link: nvidia/tu104/acr/ucode_ahesasc.bin -> ../../tu102/acr/ucode_ahesasc.bin
--Link: nvidia/tu104/acr/ucode_asb.bin -> ../../tu102/acr/ucode_asb.bin
--Link: nvidia/tu104/acr/unload_bl.bin -> ../../tu102/acr/unload_bl.bin
--Link: nvidia/tu104/acr/ucode_unload.bin -> ../../tu102/acr/ucode_unload.bin
--Link: nvidia/tu104/gr/fecs_bl.bin -> ../../tu102/gr/fecs_bl.bin
--File: nvidia/tu104/gr/fecs_data.bin
--File: nvidia/tu104/gr/fecs_inst.bin
--File: nvidia/tu104/gr/fecs_sig.bin
--Link: nvidia/tu104/gr/gpccs_bl.bin -> ../../tu102/gr/gpccs_bl.bin
--File: nvidia/tu104/gr/gpccs_data.bin
--File: nvidia/tu104/gr/gpccs_inst.bin
--File: nvidia/tu104/gr/gpccs_sig.bin
--File: nvidia/tu104/gr/sw_bundle_init.bin
--File: nvidia/tu104/gr/sw_ctx.bin
--File: nvidia/tu104/gr/sw_method_init.bin
--File: nvidia/tu104/gr/sw_nonctx.bin
--File: nvidia/tu104/gr/sw_veid_bundle_init.bin
--Link: nvidia/tu104/nvdec/scrubber.bin -> ../../tu102/nvdec/scrubber.bin
--Link: nvidia/tu104/sec2/desc.bin -> ../../tu102/sec2/desc.bin
--Link: nvidia/tu104/sec2/image.bin -> ../../tu102/sec2/image.bin
--Link: nvidia/tu104/sec2/sig.bin -> ../../tu102/sec2/sig.bin
--Link: nvidia/tu106/acr/bl.bin -> ../../tu102/acr/bl.bin
--Link: nvidia/tu106/acr/ucode_ahesasc.bin -> ../../tu102/acr/ucode_ahesasc.bin
--Link: nvidia/tu106/acr/ucode_asb.bin -> ../../tu102/acr/ucode_asb.bin
--Link: nvidia/tu106/acr/unload_bl.bin -> ../../tu102/acr/unload_bl.bin
--Link: nvidia/tu106/acr/ucode_unload.bin -> ../../tu102/acr/ucode_unload.bin
--Link: nvidia/tu106/gr/fecs_bl.bin -> ../../tu102/gr/fecs_bl.bin
--File: nvidia/tu106/gr/fecs_data.bin
--File: nvidia/tu106/gr/fecs_inst.bin
--File: nvidia/tu106/gr/fecs_sig.bin
--Link: nvidia/tu106/gr/gpccs_bl.bin -> ../../tu102/gr/gpccs_bl.bin
--File: nvidia/tu106/gr/gpccs_data.bin
--File: nvidia/tu106/gr/gpccs_inst.bin
--File: nvidia/tu106/gr/gpccs_sig.bin
--File: nvidia/tu106/gr/sw_bundle_init.bin
--File: nvidia/tu106/gr/sw_ctx.bin
--File: nvidia/tu106/gr/sw_method_init.bin
--File: nvidia/tu106/gr/sw_nonctx.bin
--File: nvidia/tu106/gr/sw_veid_bundle_init.bin
--Link: nvidia/tu106/nvdec/scrubber.bin -> ../../tu102/nvdec/scrubber.bin
--Link: nvidia/tu106/sec2/desc.bin -> ../../tu102/sec2/desc.bin
--Link: nvidia/tu106/sec2/image.bin -> ../../tu102/sec2/image.bin
--Link: nvidia/tu106/sec2/sig.bin -> ../../tu102/sec2/sig.bin
--File: nvidia/tu116/acr/bl.bin
--File: nvidia/tu116/acr/ucode_ahesasc.bin
--File: nvidia/tu116/acr/ucode_asb.bin
--File: nvidia/tu116/acr/ucode_unload.bin
--File: nvidia/tu116/acr/unload_bl.bin
--File: nvidia/tu116/gr/fecs_bl.bin
--File: nvidia/tu116/gr/fecs_data.bin
--File: nvidia/tu116/gr/fecs_inst.bin
--File: nvidia/tu116/gr/fecs_sig.bin
--File: nvidia/tu116/gr/gpccs_bl.bin
--File: nvidia/tu116/gr/gpccs_data.bin
--File: nvidia/tu116/gr/gpccs_inst.bin
--File: nvidia/tu116/gr/gpccs_sig.bin
--File: nvidia/tu116/gr/sw_bundle_init.bin
--File: nvidia/tu116/gr/sw_ctx.bin
--File: nvidia/tu116/gr/sw_method_init.bin
--File: nvidia/tu116/gr/sw_nonctx.bin
--File: nvidia/tu116/gr/sw_veid_bundle_init.bin
--File: nvidia/tu116/nvdec/scrubber.bin
--File: nvidia/tu116/sec2/desc.bin
--File: nvidia/tu116/sec2/image.bin
--File: nvidia/tu116/sec2/sig.bin
--Link: nvidia/tu117/acr/bl.bin -> ../../tu116/acr/bl.bin
--Link: nvidia/tu117/acr/ucode_ahesasc.bin -> ../../tu116/acr/ucode_ahesasc.bin
--Link: nvidia/tu117/acr/ucode_asb.bin -> ../../tu116/acr/ucode_asb.bin
--Link: nvidia/tu117/acr/ucode_unload.bin -> ../../tu116/acr/ucode_unload.bin
--Link: nvidia/tu117/acr/unload_bl.bin -> ../../tu116/acr/unload_bl.bin
--Link: nvidia/tu117/gr/fecs_bl.bin -> ../../tu116/gr/fecs_bl.bin
--File: nvidia/tu117/gr/fecs_data.bin
--File: nvidia/tu117/gr/fecs_inst.bin
--File: nvidia/tu117/gr/fecs_sig.bin
--Link: nvidia/tu117/gr/gpccs_bl.bin -> ../../tu116/gr/gpccs_bl.bin
--File: nvidia/tu117/gr/gpccs_data.bin
--File: nvidia/tu117/gr/gpccs_inst.bin
--File: nvidia/tu117/gr/gpccs_sig.bin
--File: nvidia/tu117/gr/sw_bundle_init.bin
--File: nvidia/tu117/gr/sw_ctx.bin
--File: nvidia/tu117/gr/sw_method_init.bin
--File: nvidia/tu117/gr/sw_nonctx.bin
--File: nvidia/tu117/gr/sw_veid_bundle_init.bin
--Link: nvidia/tu117/nvdec/scrubber.bin -> ../../tu116/nvdec/scrubber.bin
--Link: nvidia/tu117/sec2/desc.bin -> ../../tu116/sec2/desc.bin
--Link: nvidia/tu117/sec2/image.bin -> ../../tu116/sec2/image.bin
--Link: nvidia/tu117/sec2/sig.bin -> ../../tu116/sec2/sig.bin
--File: nvidia/ga102/acr/ucode_ahesasc.bin
--File: nvidia/ga102/acr/ucode_asb.bin
--File: nvidia/ga102/acr/ucode_unload.bin
--File: nvidia/ga102/gr/fecs_bl.bin
--File: nvidia/ga102/gr/fecs_sig.bin
--File: nvidia/ga102/gr/gpccs_bl.bin
--File: nvidia/ga102/gr/gpccs_sig.bin
--File: nvidia/ga102/gr/NET_img.bin
--File: nvidia/ga102/nvdec/scrubber.bin
--File: nvidia/ga102/sec2/desc.bin
--File: nvidia/ga102/sec2/hs_bl_sig.bin
--File: nvidia/ga102/sec2/image.bin
--File: nvidia/ga102/sec2/sig.bin
--Link: nvidia/ga103/acr/ucode_ahesasc.bin -> ../../ga102/acr/ucode_ahesasc.bin
--Link: nvidia/ga103/acr/ucode_asb.bin -> ../../ga102/acr/ucode_asb.bin
--Link: nvidia/ga103/acr/ucode_unload.bin -> ../../ga102/acr/ucode_unload.bin
--File: nvidia/ga103/gr/fecs_bl.bin
--File: nvidia/ga103/gr/fecs_sig.bin
--File: nvidia/ga103/gr/gpccs_bl.bin
--File: nvidia/ga103/gr/gpccs_sig.bin
--File: nvidia/ga103/gr/NET_img.bin
--Link: nvidia/ga103/nvdec/scrubber.bin -> ../../ga102/nvdec/scrubber.bin
--Link: nvidia/ga103/sec2/desc.bin -> ../../ga102/sec2/desc.bin
--Link: nvidia/ga103/sec2/hs_bl_sig.bin -> ../../ga102/sec2/hs_bl_sig.bin
--Link: nvidia/ga103/sec2/image.bin -> ../../ga102/sec2/image.bin
--Link: nvidia/ga103/sec2/sig.bin -> ../../ga102/sec2/sig.bin
--Link: nvidia/ga104/acr/ucode_ahesasc.bin -> ../../ga102/acr/ucode_ahesasc.bin
--Link: nvidia/ga104/acr/ucode_asb.bin -> ../../ga102/acr/ucode_asb.bin
--Link: nvidia/ga104/acr/ucode_unload.bin -> ../../ga102/acr/ucode_unload.bin
--File: nvidia/ga104/gr/fecs_bl.bin
--File: nvidia/ga104/gr/fecs_sig.bin
--File: nvidia/ga104/gr/gpccs_bl.bin
--File: nvidia/ga104/gr/gpccs_sig.bin
--File: nvidia/ga104/gr/NET_img.bin
--Link: nvidia/ga104/nvdec/scrubber.bin -> ../../ga102/nvdec/scrubber.bin
--Link: nvidia/ga104/sec2/desc.bin -> ../../ga102/sec2/desc.bin
--Link: nvidia/ga104/sec2/hs_bl_sig.bin -> ../../ga102/sec2/hs_bl_sig.bin
--Link: nvidia/ga104/sec2/image.bin -> ../../ga102/sec2/image.bin
--Link: nvidia/ga104/sec2/sig.bin -> ../../ga102/sec2/sig.bin
--Link: nvidia/ga106/acr/ucode_ahesasc.bin -> ../../ga102/acr/ucode_ahesasc.bin
--Link: nvidia/ga106/acr/ucode_asb.bin -> ../../ga102/acr/ucode_asb.bin
--Link: nvidia/ga106/acr/ucode_unload.bin -> ../../ga102/acr/ucode_unload.bin
--File: nvidia/ga106/gr/fecs_bl.bin
--File: nvidia/ga106/gr/fecs_sig.bin
--File: nvidia/ga106/gr/gpccs_bl.bin
--File: nvidia/ga106/gr/gpccs_sig.bin
--File: nvidia/ga106/gr/NET_img.bin
--Link: nvidia/ga106/nvdec/scrubber.bin -> ../../ga102/nvdec/scrubber.bin
--Link: nvidia/ga106/sec2/desc.bin -> ../../ga102/sec2/desc.bin
--Link: nvidia/ga106/sec2/hs_bl_sig.bin -> ../../ga102/sec2/hs_bl_sig.bin
--Link: nvidia/ga106/sec2/image.bin -> ../../ga102/sec2/image.bin
--Link: nvidia/ga106/sec2/sig.bin -> ../../ga102/sec2/sig.bin
--Link: nvidia/ga107/acr/ucode_ahesasc.bin -> ../../ga102/acr/ucode_ahesasc.bin
--Link: nvidia/ga107/acr/ucode_asb.bin -> ../../ga102/acr/ucode_asb.bin
--Link: nvidia/ga107/acr/ucode_unload.bin -> ../../ga102/acr/ucode_unload.bin
--File: nvidia/ga107/gr/fecs_bl.bin
--File: nvidia/ga107/gr/fecs_sig.bin
--File: nvidia/ga107/gr/gpccs_bl.bin
--File: nvidia/ga107/gr/gpccs_sig.bin
--File: nvidia/ga107/gr/NET_img.bin
--Link: nvidia/ga107/nvdec/scrubber.bin -> ../../ga102/nvdec/scrubber.bin
--Link: nvidia/ga107/sec2/desc.bin -> ../../ga102/sec2/desc.bin
--Link: nvidia/ga107/sec2/hs_bl_sig.bin -> ../../ga102/sec2/hs_bl_sig.bin
--Link: nvidia/ga107/sec2/image.bin -> ../../ga102/sec2/image.bin
--Link: nvidia/ga107/sec2/sig.bin -> ../../ga102/sec2/sig.bin
--
--File: nvidia/tu10x/typec/ccg_primary.cyacd
--File: nvidia/tu10x/typec/ccg_secondary.cyacd
--File: nvidia/tu10x/typec/ccg_boot.cyacd
--
--Licence: Redistributable. See LICENCE.nvidia for details
--
----------------------------------------------------------------------------
--
- Driver: mtk_scp - MediaTek SCP System Control Processing Driver
- 
- File: mediatek/mt8183/scp.img
-@@ -1903,53 +587,6 @@ Licence: Redistributable. See LICENSE.sdma_firmware for details
+ File: amdnpu/1502_00/npu.sbin.1.5.2.380
+@@ -4466,226 +3498,6 @@
  
  --------------------------------------------------------------------------
  
--Driver: adreno - Qualcomm Adreno GPU firmware
+-Driver: qcom_q6v5_pas - Qualcomm remoteproc firmware
 -
--File: qcom/a300_pfp.fw
--Link: a300_pfp.fw -> qcom/a300_pfp.fw
--File: qcom/a300_pm4.fw
--Link: a300_pm4.fw -> qcom/a300_pm4.fw
--File: qcom/a330_pfp.fw
--File: qcom/a330_pm4.fw
--File: qcom/a420_pfp.fw
--File: qcom/a420_pm4.fw
--File: qcom/a530_pfp.fw
--File: qcom/a530_pm4.fw
--File: qcom/a530v3_gpmu.fw2
--File: qcom/apq8096/a530_zap.mbn
--Link: qcom/a530_zap.mdt -> apq8096/a530_zap.mbn
--File: qcom/a630_gmu.bin
--File: qcom/a630_sqe.fw
--File: qcom/sdm845/a630_zap.mbn
--File: qcom/a650_gmu.bin
--File: qcom/a650_sqe.fw
--File: qcom/sm8250/a650_zap.mbn
--File: qcom/a660_gmu.bin
--File: qcom/a660_sqe.fw
--File: qcom/leia_pfp_470.fw
--File: qcom/leia_pm4_470.fw
--File: qcom/sc8280xp/LENOVO/21BX/qcdxkmsuc8280.mbn
+-File: qcom/apq8016/mba.mbn
+-File: qcom/apq8016/modem.mbn
+-Version: MPSS.DPM.2.0.2.C1.23-00008
+-File: qcom/apq8016/wcnss.mbn
+-Version: CNSS.PR.2.0.1.2.C1-00074
+-File: qcom/apq8016/WCNSS_qcom_wlan_nv_sbc.bin
+-File: qcom/apq8096/adsp.mbn
+-Version: ADSP.8996.2.7.1-00138
+-RawFile: qcom/apq8096/adspr.jsn
+-RawFile: qcom/apq8096/adspua.jsn
+-File: qcom/apq8096/mba.mbn
+-File: qcom/apq8096/modem.mbn
+-Version: MPSS.TH.2.0.1-00481
+-RawFile: qcom/apq8096/modemr.jsn
+-File: qcom/kaanapali/adsp.mbn
+-File: qcom/kaanapali/adsp_dtb.mbn
+-Version: LPAIDSP.HT.1.2-00769-KAANAPALI-1
+-RawFile: qcom/kaanapali/adspr.jsn
+-RawFile: qcom/kaanapali/adsps.jsn
+-RawFile: qcom/kaanapali/adspua.jsn
+-RawFile: qcom/kaanapali/adspuo.jsn
+-File: qcom/kaanapali/cdsp.mbn
+-File: qcom/kaanapali/cdsp_dtb.mbn
+-Version: CDSP.HT.3.2-00684-KAANAPALI-1
+-RawFile: qcom/kaanapali/cdspr.jsn
+-File: qcom/qcm2290/adsp.mbn
+-Version: ADSP.VT.5.4.1.c4-00013-KAMORTA-1
+-RawFile: qcom/qcm2290/adspr.jsn
+-RawFile: qcom/qcm2290/adsps.jsn
+-RawFile: qcom/qcm2290/adspua.jsn
+-File: qcom/qcm2290/modem.mbn
+-Version: MPSS.HA.1.1-00435-KD_ALL_PACK-1
+-RawFile: qcom/qcm2290/modemr.jsn
+-RawFile: qcom/qcm2290/modemuw.jsn
+-File: qcom/qcm6490/adsp.mbn
+-Version: ADSP.HT.5.5.c8-00217-KODIAK-1
+-RawFile: qcom/qcm6490/adspr.jsn
+-RawFile: qcom/qcm6490/adsps.jsn
+-RawFile: qcom/qcm6490/adspua.jsn
+-RawFile: qcom/qcm6490/battmgr.jsn
+-File: qcom/qcm6490/cdsp.mbn
+-Version: CDSP.HT.2.5.c3-00103-KODIAK-1
+-RawFile: qcom/qcm6490/cdspr.jsn
+-File: qcom/qcm6490/ipa_fws.mbn
+-Link: qcom/qcs6490/adsp.mbn -> ../qcm6490/adsp.mbn
+-Link: qcom/qcs6490/adspr.jsn -> ../qcm6490/adspr.jsn
+-Link: qcom/qcs6490/adsps.jsn -> ../qcm6490/adsps.jsn
+-Link: qcom/qcs6490/adspua.jsn -> ../qcm6490/adspua.jsn
+-Link: qcom/qcs6490/battmgr.jsn -> ../qcm6490/battmgr.jsn
+-Link: qcom/qcs6490/cdsp.mbn -> ../qcm6490/cdsp.mbn
+-Link: qcom/qcs6490/cdspr.jsn -> ../qcm6490/cdspr.jsn
+-File: qcom/qcs6490/radxa/dragon-q6a/adsp.mbn
+-Version: ADSP.HT.5.5.c8-00217-KODIAK-1
+-RawFile: qcom/qcs6490/radxa/dragon-q6a/adspr.jsn
+-RawFile: qcom/qcs6490/radxa/dragon-q6a/adsps.jsn
+-RawFile: qcom/qcs6490/radxa/dragon-q6a/adspua.jsn
+-File: qcom/qcs615/adsp.mbn
+-Version: ADSP.VT.5.2.c6-00059-SM6150-1
+-RawFile: qcom/qcs615/adspr.jsn
+-RawFile: qcom/qcs615/adsps.jsn
+-RawFile: qcom/qcs615/adspua.jsn
+-File: qcom/qcs615/cdsp.mbn
+-Version: CDSP.VT.2.2.c4-00019-SM6150-1
+-RawFile: qcom/qcs615/cdspr.jsn
+-File: qcom/qrb4210/adsp.mbn
+-Version: ADSP.VT.5.4.1.c4-00013-KAMORTA-1
+-RawFile: qcom/qrb4210/adspr.jsn
+-RawFile: qcom/qrb4210/adsps.jsn
+-RawFile: qcom/qrb4210/adspua.jsn
+-File: qcom/qrb4210/cdsp.mbn
+-Version: CDSP.VT.2.4.1-00269-KAMORTA-1
+-RawFile: qcom/qrb4210/cdspr.jsn
+-File: qcom/qrb4210/modem.mbn
+-Version: MPSS.HA.1.1-00435-KD_ALL_PACK-1
+-RawFile: qcom/qrb4210/modemr.jsn
+-RawFile: qcom/qrb4210/modemuw.jsn
+-File: qcom/sdm845/adsp.mbn
+-Version: ADSP.HT.4.0-00593-SDM845-1
+-RawFile: qcom/sdm845/adspr.jsn
+-RawFile: qcom/sdm845/adspua.jsn
+-File: qcom/sdm845/cdsp.mbn
+-Version: CDSP.HT.1.0-00559-SDM845-1
+-RawFile: qcom/sdm845/cdspr.jsn
+-File: qcom/sdm845/Thundercomm/db845c/slpi.mbn
+-Version: SLPI.HY.1.0-00365-SDM845AZL-1
+-RawFile: qcom/sdm845/Thundercomm/db845c/slpir.jsn
+-RawFile: qcom/sdm845/Thundercomm/db845c/slpius.jsn
+-File: qcom/sm8250/adsp.mbn
+-Version: ADSP.HT.5.3.c2-00082-SM8250-1
+-RawFile: qcom/sm8250/adspr.jsn
+-RawFile: qcom/sm8250/adspua.jsn
+-File: qcom/sm8250/cdsp.mbn
+-Version: CDSP.HT.2.3.c1-00076-SM8250-1
+-RawFile: qcom/sm8250/cdspr.jsn
+-File: qcom/sm8250/Thundercomm/RB5/slpi.mbn
+-Version: SLPI.HY.3.1-00049-SM8250AZL-2
+-RawFile: qcom/sm8250/Thundercomm/RB5/slpir.jsn
+-RawFile: qcom/sm8250/Thundercomm/RB5/slpius.jsn
+-RawFile: qcom/sc8280xp/LENOVO/21BX/adspr.jsn
+-RawFile: qcom/sc8280xp/LENOVO/21BX/adspua.jsn
+-RawFile: qcom/sc8280xp/LENOVO/21BX/battmgr.jsn
+-RawFile: qcom/sc8280xp/LENOVO/21BX/cdspr.jsn
+-File: qcom/sc8280xp/LENOVO/21BX/qcadsp8280.mbn
+-Version: ADSP.HT.5.6.c2-00013-MAKENA-1.75542.4
+-File: qcom/sc8280xp/LENOVO/21BX/qccdsp8280.mbn
+-Version: CDSP.HT.2.6-00735.4-MAKENA-1
+-File: qcom/sc8280xp/LENOVO/21BX/qcslpi8280.mbn
+-Version: SLPI.HY.4.1-00061-MAKENA-1
+-File: qcom/sc8280xp/LENOVO/21BX/qcvss8280.mbn
+-Version: video-firmware.1.1-b158087140355883dc40b004032856a8feb5d565
+-File: qcom/x1e80100/LENOVO/21N1/qcvss8380.mbn
+-Version: vfw-3.1:rel0085-070fa3311d9ef968015fee7fea07198d7eb208a1
+-File: qcom/x1e80100/adsp.mbn
+-File: qcom/x1e80100/adsp_dtb.mbn
+-Version: ADSP.HT.5.9-00796-HAMOA-1
+-RawFile: qcom/x1e80100/adspr.jsn
+-RawFile: qcom/x1e80100/adsps.jsn
+-RawFile: qcom/x1e80100/adspua.jsn
+-RawFile: qcom/x1e80100/battmgr.jsn
+-RawFile: qcom/x1e80100/LENOVO/21N1/adspua.jsn
+-File: qcom/x1e80100/cdsp.mbn
+-File: qcom/x1e80100/cdsp_dtb.mbn
+-Version: CDSP.HT.2.9.c1-00069-HAMOA-1
+-RawFile: qcom/x1e80100/cdspr.jsn
+-File: qcom/x1e80100/LENOVO/21N1/qcadsp8380.mbn
+-Version: ADSP.HT.5.9-00787.2-HAMOA-1
+-File: qcom/x1e80100/LENOVO/21N1/adsp_dtbs.elf
+-RawFile: qcom/x1e80100/LENOVO/21N1/adspr.jsn
+-File: qcom/x1e80100/LENOVO/21N1/cdsp_dtbs.elf
+-RawFile: qcom/x1e80100/LENOVO/21N1/adsps.jsn
+-File: qcom/x1e80100/LENOVO/21N1/qccdsp8380.mbn
+-Version: CDSP.HT.2.9-00447-HAMOA-2
+-RawFile: qcom/x1e80100/LENOVO/21N1/cdspr.jsn
+-File: qcom/x1e80100/LENOVO/21N1/qcdxkmsuc8380.mbn
+-RawFile: qcom/x1e80100/LENOVO/21N1/battmgr.jsn
+-File: qcom/x1e80100/LENOVO/83ED/adsp_dtbs.elf
+-RawFile: qcom/x1e80100/LENOVO/83ED/adspr.jsn
+-RawFile: qcom/x1e80100/LENOVO/83ED/adsps.jsn
+-RawFile: qcom/x1e80100/LENOVO/83ED/adspua.jsn
+-RawFile: qcom/x1e80100/LENOVO/83ED/battmgr.jsn
+-RawFile: qcom/x1e80100/LENOVO/83ED/cdspr.jsn
+-File: qcom/x1e80100/LENOVO/83ED/qcadsp8380.mbn
+-Version: ADSP.HT.5.9.c1-00059-HAMOA-1
+-File: qcom/x1e80100/LENOVO/83ED/qcav1e8380.mbn
+-Version: CDSP.HT.2.9.c2-00051-HAMOA-1
+-File: qcom/x1e80100/LENOVO/83ED/qccdsp8380.mbn
+-Version: CDSP.HT.2.9.c2-00051-HAMOA-1
+-File: qcom/x1e80100/LENOVO/83ED/qcdxkmsuc8380.mbn
+-File: qcom/x1e80100/LENOVO/83ED/qcvss8380.mbn
+-Version: video-firmware.3.1-e5aea20c64cb6df9a1c9be99e206053b36424939
 -
 -Licence: Redistributable. See LICENSE.qcom and qcom/NOTICE.txt for details
 -
+-Info:
 -Binary files supplied originally from
--https://developer.qualcomm.com/hardware/dragonboard-410c/tools
+-http://releases.linaro.org/96boards/dragonboard410c/qualcomm/firmware/linux-board-support-package-r1036.1.zip
+-http://releases.linaro.org/96boards/dragonboard845c/qualcomm/firmware/RB3_firmware_20221121000000-v5.zip
+-https://releases.linaro.org/96boards/rb1/qualcomm/firmware/RB1_firmware_20230823-v2.zip
+-https://releases.linaro.org/96boards/rb2/qualcomm/firmware/RB2_firmware_20230823-v2.zip
+-http://releases.linaro.org/96boards/rb5/qualcomm/firmware/RB5_firmware_20210331-v4.zip
+-
+-adsp.mbn has been converted from 20-adsp_split/firmware/adsp.* using
+-https://github.com/andersson/pil-squasher
+-
+-cdsp.mbn has been converted from 21-cdsp_split/firmware/cdsp.* using
+-https://github.com/andersson/pil-squasher
+-
+-File: qcom/kaanapali/soccp.mbn
+-File: qcom/kaanapali/soccp_dtb.mbn
+-Version: SOCCP.FW.2.1-00204-KAANAPALI_SOCCP_PACK-1
+-RawFile: qcom/kaanapali/soccpr.jsn
+-File: qcom/sa8775p/adsp.mbn
+-Version: DSP.AT.1.0.1-00163-LEMANS-1
+-RawFile: qcom/sa8775p/adspr.jsn
+-RawFile: qcom/sa8775p/adspua.jsn
+-File: qcom/sa8775p/cdsp0.mbn
+-Version: DSP.AT.1.0.1-00163-LEMANS-1
+-File: qcom/sa8775p/cdsp1.mbn
+-Version: DSP.AT.1.0.1-00163-LEMANS-1
+-RawFile: qcom/sa8775p/cdspr.jsn
+-File: qcom/sa8775p/gpdsp0.mbn
+-Version: DSP.AT.1.0.1-00163-LEMANS-1
+-File: qcom/sa8775p/gpdsp1.mbn
+-Version: DSP.AT.1.0.1-00163-LEMANS-1
+-RawFile: qcom/sa8775p/gpdsp1r.jsn
+-RawFile: qcom/sa8775p/gpdspr.jsn
+-File: qcom/qcs8300/adsp.mbn
+-Version: DSP.AT.1.0.1-00163-LEMANS-1
+-RawFile: qcom/qcs8300/adspr.jsn
+-RawFile: qcom/qcs8300/adspua.jsn
+-File: qcom/qcs8300/cdsp0.mbn
+-Version: DSP.AT.1.0.1-00163-LEMANS-1
+-RawFile: qcom/qcs8300/cdspr.jsn
+-File: qcom/qcs8300/gpdsp0.mbn
+-Version: DSP.AT.1.0.1-00163-LEMANS-1
+-
+-Licence: Redistributable. See LICENSE.qcom-2 and qcom/NOTICE.txt for details
 -
 ---------------------------------------------------------------------------
 -
--Driver: adreno - Qualcomm Adreno GPU firmware
+-Driver: qcom_q6v5_mss - Qualcomm modem subsystem firmware
 -
--File: qcom/yamato_pfp.fw
--File: qcom/yamato_pm4.fw
+-File: qcom/sdm845/mba.mbn
+-File: qcom/sdm845/modem_nm.mbn
+-RawFile: qcom/sdm845/modemuw.jsn
+-Link: qcom/sdm845/modem.mbn -> modem_nm.mbn
 -
--Licence: Redistributable, BSD-3-Clause licence, See LICENSE.qcom_yamato for details
+-Licence: Redistributable. See LICENSE.qcom and qcom/NOTICE.txt for details
 -
--Binary files generated from header files in EfikaMX kernel sources. A prefix of
--four zero bytes was prepended to make them work with the DRM MSM driver. See
--https://github.com/genesi/linux-legacy/tree/master/drivers/mxc/amd-gpu
+-Info:
+-Binary files supplied originally from
+-http://releases.linaro.org/96boards/dragonboard845c/qualcomm/firmware/RB3_firmware_20221121000000-v5.zip
+-
+-modem.mbn has been converted from 28-modem/modem.* using
+-https://github.com/andersson/pil-squasher
 -
 ---------------------------------------------------------------------------
 -
  Driver: mlxsw_spectrum - Mellanox Spectrum switch
  
  File: mellanox/mlxsw_spectrum-13.1420.122.mfa2
--- 
-2.40.1
-
+@@ -5306,16 +4118,6 @@
+ 
+ --------------------------------------------------------------------------
+ 
+-Driver: qcom-sc8280xp - Qualcomm ASoC tplg Firmware
+-File: qcom/sc8280xp/LENOVO/21BX/audioreach-tplg.bin
+-Link: qcom/sc8280xp/SC8280XP-LENOVO-X13S-tplg.bin -> LENOVO/21BX/audioreach-tplg.bin
+-Version: v1.0.0
+-Info: DATE=15.10.2025
+-
+-Licence: Redistributable. See LICENCE.linaro for details
+-Originates from https://github.com/linux-msm/audioreach-topology.git
+---------------------------------------------------------------------------
+-
+ Driver: amlogic - Amlogic SoC Firmware
+ File: amlogic/aml_w155s2_bt_uart.bin
+ Version: 42.23
+@@ -5345,75 +4147,6 @@
+ 
+ --------------------------------------------------------------------------
+ 
+-Driver: qcom-qcs6490 - Qualcomm ASoC topology
+-File: qcom/qcs6490/QCS6490-Radxa-Dragon-Q6A-tplg.bin
+-File: qcom/qcs6490/QCS6490-RB3Gen2-tplg.bin
+-Version: v0.1.0
+-
+-Licence: Redistributable. See LICENCE.linaro for details
+-Originates from https://github.com/linux-msm/audioreach-topology.git
+-
+---------------------------------------------------------------------------
+-
+-Driver: qcom-qcs8300 - Qualcomm ASoC topology
+-File: qcom/qcs8300/MONACO-EVK-tplg.bin
+-Version: v0.1.0
+-
+-Licence: Redistributable. See LICENCE.linaro for details
+-Originates from https://github.com/linux-msm/audioreach-topology.git
+-
+---------------------------------------------------------------------------
+-
+-Driver: qcom-qcs9100 - Qualcomm ASoC topology
+-File: qcom/sa8775p/LEMANS-EVK-tplg.bin
+-Link: qcom/qcs9100/LEMANS-EVK-tplg.bin -> ../sa8775p/LEMANS-EVK-tplg.bin
+-Version: v0.1.0
+-
+-Licence: Redistributable. See LICENCE.linaro for details
+-Originates from https://github.com/linux-msm/audioreach-topology.git
+-
+---------------------------------------------------------------------------
+-
+-Driver: qcom-sm8550 - Qualcomm ASoC tplg Firmware
+-File: qcom/sm8550/SM8550-HDK-tplg.bin
+-File: qcom/sm8550/SM8550-QRD-tplg.bin
+-Version: v1.0.0
+-Info: DATE=15.10.2025
+-
+-Licence: Redistributable. See LICENCE.linaro for details
+-Originates from https://git.codelinaro.org/linaro/qcomlt/audioreach-topology.git
+-
+---------------------------------------------------------------------------
+-
+-Driver: qcom-sm8650 - Qualcomm ASoC tplg Firmware
+-File: qcom/sm8650/SM8650-QRD-tplg.bin
+-File: qcom/sm8650/SM8650-MTP-tplg.bin
+-Version: v1.0.0
+-Info: DATE=15.10.2025
+-
+-Licence: Redistributable. See LICENCE.linaro for details
+-Originates from https://git.codelinaro.org/linaro/qcomlt/audioreach-topology.git
+-
+---------------------------------------------------------------------------
+-
+-Driver: qcom-x1e80100 - Qualcomm ASoC tplg Firmware
+-File: qcom/x1e80100/LENOVO/21N1/X1E80100-LENOVO-Thinkpad-T14s-tplg.bin
+-Link: qcom/x1e80100/X1E80100-LENOVO-Thinkpad-T14s-tplg.bin -> LENOVO/21N1/X1E80100-LENOVO-Thinkpad-T14s-tplg.bin
+-Version: v1.0.0
+-Info: DATE=15.10.2025
+-
+-File: qcom/x1e80100/LENOVO/83ED/X1E80100-LENOVO-Yoga-Slim7x-tplg.bin
+-Link: qcom/x1e80100/X1E80100-LENOVO-Yoga-Slim7x-tplg.bin -> LENOVO/83ED/X1E80100-LENOVO-Yoga-Slim7x-tplg.bin
+-Version: v1.0.0
+-Info: DATE=15.10.2025
+-
+-File: qcom/x1e80100/X1E80100-EVK-tplg.bin
+-Version: v0.1.0
+-
+-Licence: Redistributable. See LICENCE.linaro for details
+-Originates from https://github.com/linux-msm/audioreach-topology.git
+-
+---------------------------------------------------------------------------
+ Driver: ti-tas2781 - tas2781 firmware
+ File: ti/audio/tas2781/TAS2XXX0C94.bin
+ File: ti/audio/tas2781/TAS2XXX0C95.bin
+@@ -5750,15 +4483,6 @@
+ 
+ ---------------------------------------------------------------------------
+ 
+-Driver: qcom-geni-se - Qualcomm QUPv3 firmware image file
+-File: qcom/sa8775p/qupv3fw.elf
+-File: qcom/qcm6490/qupv3fw.elf
+-Link: qcom/qcs6490/qupv3fw.elf -> ../qcm6490/qupv3fw.elf
+-File: qcom/qcs8300/qupv3fw.elf
+-
+-License: Redistributable. See LICENSE.qcom and qcom/NOTICE.txt for details
+----------------------------------------------------------------------------
+-
+ Driver: sdx61 - Qualcomm SDX61 firmware image file for Foxconn vendor
+ File: qcom/sdx61/foxconn/prog_firehose_lite.elf
+ 

@@ -18,18 +18,9 @@ to easily add firmware when necessitated by driver addition.
 
 Signed-off-by: Leonard Foerster <foersleo@amazon.com>
 ---
- LICENCE.qla1280 | 23 ------------------
- LICENCE.qla2xxx | 31 ------------------------
- WHENCE          | 63 -------------------------------------------------
- 3 files changed, 117 deletions(-)
- delete mode 100644 LICENCE.qla1280
- delete mode 100644 LICENCE.qla2xxx
-
-diff --git a/LICENCE.qla1280 b/LICENCE.qla1280
-deleted file mode 100644
-index 00cd353..0000000
---- a/LICENCE.qla1280
-+++ /dev/null
+diff -ruN scsi-step1/LICENCE.qla1280 scsi-step2/LICENCE.qla1280
+--- scsi-step1/LICENCE.qla1280	2025-11-18 03:27:49.099776874 +0000
++++ scsi-step2/LICENCE.qla1280	1970-01-01 00:00:00.000000000 +0000
 @@ -1,23 +0,0 @@
 -Copyright (C) 1995, 1996, 1997, 1998, 1999, 2000 QLogic, Inc.
 -All rights reserved.
@@ -54,11 +45,9 @@ index 00cd353..0000000
 -THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 -(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 -THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-diff --git a/LICENCE.qla2xxx b/LICENCE.qla2xxx
-deleted file mode 100644
-index 6b3d8ff..0000000
---- a/LICENCE.qla2xxx
-+++ /dev/null
+diff -ruN scsi-step1/LICENCE.qla2xxx scsi-step2/LICENCE.qla2xxx
+--- scsi-step1/LICENCE.qla2xxx	2025-11-18 03:27:49.099776874 +0000
++++ scsi-step2/LICENCE.qla2xxx	1970-01-01 00:00:00.000000000 +0000
 @@ -1,31 +0,0 @@
 -Copyright (c) 2003-2017 QLogic Corporation
 -QLogic Linux Fibre Channel Adapter Firmware
@@ -91,11 +80,10 @@ index 6b3d8ff..0000000
 -PROPERTY RIGHTS (PATENT, COPYRIGHT, TRADE SECRET, MASK WORK, OR OTHER PROPRIETARY
 -RIGHT) EMBODIED IN ANY OTHER QLOGIC HARDWARE OR SOFTWARE EITHER SOLELY OR IN
 -COMBINATION WITH THIS PROGRAM.
-diff --git a/WHENCE b/WHENCE
-index edf6f75..bf5204f 100644
---- a/WHENCE
-+++ b/WHENCE
-@@ -8,29 +8,6 @@ kernel.
+diff -ruN scsi-step1/WHENCE scsi-step2/WHENCE
+--- scsi-step1/WHENCE	2025-11-18 03:27:49.289830857 +0000
++++ scsi-step2/WHENCE	2025-11-18 03:28:10.441825242 +0000
+@@ -17,29 +17,6 @@
  
  --------------------------------------------------------------------------
  
@@ -106,7 +94,7 @@ index edf6f75..bf5204f 100644
 -File: advansys/38C0800.bin
 -File: advansys/38C1600.bin
 -
--Licence: BSD, no source available.
+-Licence: Redistributable. See LICENCE.advansys for details
 -
 -Found in hex form in kernel source.
 -
@@ -122,10 +110,10 @@ index edf6f75..bf5204f 100644
 -
 ---------------------------------------------------------------------------
 -
- Driver: kaweth -- USB KLSI KL5USB101-based Ethernet device
+ Driver: kaweth - USB KLSI KL5USB101-based Ethernet device
  
  File: kaweth/new_code.bin
-@@ -265,27 +242,6 @@ http://www.zdomain.com/a56.html
+@@ -298,27 +275,6 @@
  
  --------------------------------------------------------------------------
  
@@ -142,7 +130,7 @@ index edf6f75..bf5204f 100644
 -File: ql2400_fw.bin
 -Version: 8.07.00 MID
 -File: ql2500_fw.bin
--Version: 8.07.00 MIDQ
+-Version: 8.08.207 MIDQ
 -
 -Licence: Redistributable. See LICENCE.qla2xxx for details
 -
@@ -153,7 +141,7 @@ index edf6f75..bf5204f 100644
  Driver: orinoco - Agere/Prism/Symbol Orinoco support
  
  File: agere_sta_fw.bin
-@@ -631,16 +587,6 @@ Found in hex form in kernel source.
+@@ -837,16 +793,6 @@
  
  --------------------------------------------------------------------------
  
@@ -170,11 +158,11 @@ index edf6f75..bf5204f 100644
  Driver: myri_sbus - MyriCOM Gigabit Ethernet
  
  File: myricom/lanai.bin
-@@ -1810,15 +1756,6 @@ Licence: Redistributable. See LICENCE.ene_firmware for details.
+@@ -2807,15 +2753,6 @@
  
  --------------------------------------------------------------------------
  
--Driver: isci -- Intel C600 SAS controller driver
+-Driver: isci - Intel C600 SAS controller driver
 -
 -File: isci/isci_firmware.bin
 -Source: isci/
@@ -183,9 +171,22 @@ index edf6f75..bf5204f 100644
 -
 ---------------------------------------------------------------------------
 -
- Driver: rp2 -- Comtrol RocketPort 2 serial driver
+ Driver: s5p-mfc - Samsung MFC video encoder/decoder driver
  
- File: rp2.fw
--- 
-2.40.1
-
+ File: s5p-mfc.fw
+@@ -3154,15 +3091,6 @@
+ 
+ --------------------------------------------------------------------------
+ 
+-Driver: BFA/BNA - QLogic BR-series Adapter FC/FCOE drivers
+-
+-File: cbfw-3.2.5.1.bin
+-File: ctfw-3.2.5.1.bin
+-File: ct2fw-3.2.5.1.bin
+-
+-Licence: Redistributable. See LICENSE.bfa for details.
+-
+---------------------------------------------------------------------------
+ Driver: qat - Intel(R) QAT crypto accelerator
+ 
+ File: intel/qat/qat_895xcc.bin

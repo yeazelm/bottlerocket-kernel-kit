@@ -21,20 +21,9 @@ enablement make that necessary.
 
 Signed-off-by: Leonard Foerster <foersleo@amazon.com>
 ---
- LICENCE.Marvell       |  22 ------
- LICENCE.mediatek      |   9 ---
- LICENSE.sdma_firmware |  47 ------------
- WHENCE                | 164 ------------------------------------------
- 4 files changed, 242 deletions(-)
- delete mode 100644 LICENCE.Marvell
- delete mode 100644 LICENCE.mediatek
- delete mode 100644 LICENSE.sdma_firmware
-
-diff --git a/LICENCE.Marvell b/LICENCE.Marvell
-deleted file mode 100644
-index fdf4cda..0000000
---- a/LICENCE.Marvell
-+++ /dev/null
+diff -ruN var-step1/LICENCE.Marvell var-step2/LICENCE.Marvell
+--- var-step1/LICENCE.Marvell	2025-11-18 03:49:01.364098701 +0000
++++ var-step2/LICENCE.Marvell	1970-01-01 00:00:00.000000000 +0000
 @@ -1,22 +0,0 @@
 -Copyright © 2019.  Marvell International Ltd.  All rights reserved.
 -
@@ -58,11 +47,9 @@ index fdf4cda..0000000
 -ENJOYMENT OR NON-INFRINGEMENT OF THIRD PARTY INTELLECTUAL PROPERTY RIGHTS.
 -MARVELL, ITS AFFILIATES AND THEIR SUPPLIERS DISCLAIM ANY WARRANTY THAT THE
 -DELIVERABLES WILL OPERATE WITHOUT INTERRUPTION OR BE ERROR-FREE.
-diff --git a/LICENCE.mediatek b/LICENCE.mediatek
-deleted file mode 100644
-index 6886c61..0000000
---- a/LICENCE.mediatek
-+++ /dev/null
+diff -ruN var-step1/LICENCE.mediatek var-step2/LICENCE.mediatek
+--- var-step1/LICENCE.mediatek	2025-11-18 03:49:01.366684806 +0000
++++ var-step2/LICENCE.mediatek	1970-01-01 00:00:00.000000000 +0000
 @@ -1,9 +0,0 @@
 -MediaTek Inc. grants permission to use and redistribute aforementioned firmware
 -files for the use with devices containing MediaTek chipsets, but not as part of
@@ -73,11 +60,9 @@ index 6886c61..0000000
 -These firmware files are distributed in the hope that they will be useful, but
 -are provided WITHOUT ANY WARRANTY, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTY
 -OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
-diff --git a/LICENSE.sdma_firmware b/LICENSE.sdma_firmware
-deleted file mode 100644
-index 0d3d562..0000000
---- a/LICENSE.sdma_firmware
-+++ /dev/null
+diff -ruN var-step1/LICENSE.sdma_firmware var-step2/LICENSE.sdma_firmware
+--- var-step1/LICENSE.sdma_firmware	2025-11-18 03:49:01.372684820 +0000
++++ var-step2/LICENSE.sdma_firmware	1970-01-01 00:00:00.000000000 +0000
 @@ -1,47 +0,0 @@
 -Copyright 2017, NXP
 -All rights reserved.
@@ -126,11 +111,10 @@ index 0d3d562..0000000
 -ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
 -TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
 -USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-diff --git a/WHENCE b/WHENCE
-index 3bb6523..748a81e 100644
---- a/WHENCE
-+++ b/WHENCE
-@@ -8,20 +8,6 @@ kernel.
+diff -ruN var-step1/WHENCE var-step2/WHENCE
+--- var-step1/WHENCE	2025-11-18 03:49:01.579162611 +0000
++++ var-step2/WHENCE	2025-11-18 03:49:24.399738182 +0000
+@@ -113,20 +113,6 @@
  
  --------------------------------------------------------------------------
  
@@ -148,10 +132,10 @@ index 3bb6523..748a81e 100644
 -
 ---------------------------------------------------------------------------
 -
- Driver: cxgb4 - Chelsio Terminator 4/5/6 1/10/25/40/100G Ethernet adapter
+ Driver: snd-sb16-csp - Sound Blaster 16/AWE CSP support
  
- File: cxgb4/t4fw-1.14.4.0.bin
-@@ -69,18 +55,6 @@ Found in hex form in kernel source.
+ File: sb16/mulaw_main.csp
+@@ -462,18 +448,6 @@
  
  --------------------------------------------------------------------------
  
@@ -160,18 +144,18 @@ index 3bb6523..748a81e 100644
 -File: yam/1200.bin
 -File: yam/9600.bin
 -
--Licence:
-- * (C) F6FBB 1998
+-Licence: Unknown
+-(C) F6FBB 1998
 -
 -Found in hex form in kernel source.
 -
 ---------------------------------------------------------------------------
 -
- Driver: bnx2x: Broadcom Everest
+ Driver: pcnet_cs - NE2000 compatible PCMCIA adapter
  
- File: bnx2x/bnx2x-e1-7.13.1.0.fw
-@@ -561,132 +535,6 @@ Version: HuC API/APB ver 8.5.0 for Meteorlake
- License: Redistributable. See LICENSE.i915 for details
+ File: cis/LA-PCM.cis
+@@ -2954,25 +2928,6 @@
+ 
  --------------------------------------------------------------------------
  
 -Driver: mtk_scp - MediaTek SCP System Control Processing Driver
@@ -183,12 +167,23 @@ index 3bb6523..748a81e 100644
 -File: mediatek/mt8192/scp.img
 -Version: v2.0.20536
 -File: mediatek/mt8195/scp.img
--Version: v2.0.11966
+-Version: v2.0.21961
+-File: mediatek/mt8188/scp.img
+-Version: v2.0.27748
+-File: mediatek/mt8189/scp.img
+-Version: v1.0.0
 -
 -Licence: Redistributable. See LICENCE.mediatek for details.
 -
 ---------------------------------------------------------------------------
 -
+ Driver: rk3399-dptx - ROCKCHIP rk3399 dptx firmware
+ 
+ File: rockchip/dptx.bin
+@@ -3391,17 +3346,6 @@
+ 
+ --------------------------------------------------------------------------
+ 
 -Driver: imx-sdma - support for i.MX SDMA driver
 -
 -File: imx/sdma/sdma-imx6q.bin
@@ -200,6 +195,13 @@ index 3bb6523..748a81e 100644
 -
 ---------------------------------------------------------------------------
 -
+ Driver: adreno - Qualcomm Adreno GPU firmware
+ 
+ File: qcom/leia_pfp_470.fw
+@@ -3498,87 +3442,6 @@
+ 
+ --------------------------------------------------------------------------
+ 
 -Driver: mlxsw_spectrum - Mellanox Spectrum switch
 -
 -File: mellanox/mlxsw_spectrum-13.1420.122.mfa2
@@ -266,48 +268,28 @@ index 3bb6523..748a81e 100644
 -File: mellanox/mlxsw_spectrum2-29.2010.3146.mfa2
 -File: mellanox/mlxsw_spectrum3-30.2010.3146.mfa2
 -File: mellanox/lc_ini_bundle_2010_3146.bin
+-File: mellanox/mlxsw_spectrum-13.2012.1012.mfa2
+-File: mellanox/mlxsw_spectrum2-29.2012.1012.mfa2
+-File: mellanox/mlxsw_spectrum3-30.2012.1012.mfa2
+-File: mellanox/mlxsw_spectrum4-34.2012.1012.mfa2
+-File: mellanox/mlxsw_spectrum-13.2014.4012.mfa2
+-File: mellanox/mlxsw_spectrum2-29.2014.4012.mfa2
+-File: mellanox/mlxsw_spectrum3-30.2014.4012.mfa2
+-File: mellanox/mlxsw_spectrum4-34.2014.4012.mfa2
 -
--Licence:
-- Copyright (c) 2017-2020 Mellanox Technologies, Ltd. All rights reserved.
+-Licence: Redistributable. See LICENSE.mellanox for details.
 -
-- Redistribution and use in source and binary forms, with or without
-- modification, are permitted provided that the following conditions are met:
--
-- 1. Redistributions of source code must retain the above copyright
--    notice, this list of conditions and the following disclaimer.
-- 2. Redistributions in binary form must reproduce the above copyright
--    notice, this list of conditions and the following disclaimer in the
--    documentation and/or other materials provided with the distribution.
-- 3. Neither the names of the copyright holders nor the names of its
--    contributors may be used to endorse or promote products derived from
--    this software without specific prior written permission.
--
-- Alternatively, this software may be distributed under the terms of the
-- GNU General Public License ("GPL") version 2 as published by the Free
-- Software Foundation.
--
-- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-- AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-- IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-- ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
-- LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-- CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-- SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
-- INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
-- CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-- ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-- POSSIBILITY OF SUCH DAMAGE.
+-Copyright (c) 2017-2020 Mellanox Technologies, Ltd. All rights reserved.
 -
 ---------------------------------------------------------------------------
 -
- Driver: ice - Intel(R) Ethernet Connection E800 Series
+ Driver: cdns-mhdp - Cadence MHDP8546 DP bridge
  
- File: intel/ice/ddp/ice-1.3.30.0.pkg
-@@ -700,15 +548,3 @@ File: intel/ice/ddp-wireless_edge/ice_wireless_edge-1.3.10.0.pkg
- License: Redistributable. See LICENSE.ice_enhanced for details
+ File: cadence/mhdp8546.bin
+@@ -3665,18 +3528,6 @@
  
  --------------------------------------------------------------------------
--
+ 
 -Driver: prestera - Marvell driver for Prestera family ASIC devices
 -
 -File: mrvl/prestera/mvsw_prestera_fw-v2.0.img
@@ -318,7 +300,8 @@ index 3bb6523..748a81e 100644
 -
 -Licence: Redistributable. See LICENCE.Marvell for details.
 -
--------------------------------------------------
--- 
-2.40.1
-
+---------------------------------------------------------------------------
+-
+ Driver: lt9611uxc - Lontium DSI to HDMI bridge
+ 
+ File: lt9611uxc_fw.bin

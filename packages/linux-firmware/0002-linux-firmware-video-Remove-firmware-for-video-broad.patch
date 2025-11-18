@@ -28,62 +28,12 @@ easily check if we need to ship additional firmware in the future.
 * wave5 - CONFIG_VIDEO_WAVE_VPU (driver not yet included upstream)
 * amphion - CONFIG_VIDEO_AMPHION_VPU
 * dvb-ttusb-budget - CONFIG_DVB_TTUSB_BUDGET
-* dvb-ttpci - CONFIG_DVB_AV7110
-* xc4000 - CONFIG_MEDIA_TUNER_XC4000
-* xc5000 - CONFIG_MEDIA_TUNER_XC5000
-* dib0700 - CONFIG_DVB_USB_DIB0700
-* lsg8gxx - CONFIG_DVB_LGS8GXX
-* drxk - CONFIG_DVB_DRXK
-* as102 - CONFIG_DVB_AS102
-* it9135 - CONFIG_MEDIA_TUNER_IT913X
-* smsmdtv - CONFIG_SMS_SIANO_MDTV
-* tegra-vix - CONFIG_DRM_TEGRA
-* rk3399-dptx - CONFIG_ROCKCHIP_CDN_DP
-* cdns-mhdp - CONFIG_DRM_CDNS_MHDP8546
-* lt9611uxc - CONFIG_DRM_LONTIUM_LT9611UXC
 
 Signed-off-by: Leonard Foerster <foersleo@amazon.com>
 ---
- LICENCE.Abilis        |  22 --
- LICENCE.cadence       |  63 ------
- LICENCE.cnm           |  23 ---
- LICENCE.go7007        | 457 ------------------------------------------
- LICENCE.it913x        |  17 --
- LICENCE.rockchip      |  41 ----
- LICENCE.siano         |  31 ---
- LICENCE.ti-tspa       |  46 -----
- LICENCE.xc4000        |  23 ---
- LICENCE.xc5000        |  23 ---
- LICENCE.xc5000c       |  23 ---
- LICENSE.Lontium       |   2 -
- LICENSE.amlogic_vdec  |  15 --
- LICENSE.amphion_vpu   |  48 -----
- LICENSE.dib0700       |  22 --
- LICENSE.ipu3_firmware |  36 ----
- WHENCE                | 400 ------------------------------------
- 17 files changed, 1292 deletions(-)
- delete mode 100644 LICENCE.Abilis
- delete mode 100644 LICENCE.cadence
- delete mode 100644 LICENCE.cnm
- delete mode 100644 LICENCE.go7007
- delete mode 100644 LICENCE.it913x
- delete mode 100644 LICENCE.rockchip
- delete mode 100644 LICENCE.siano
- delete mode 100644 LICENCE.ti-tspa
- delete mode 100644 LICENCE.xc4000
- delete mode 100644 LICENCE.xc5000
- delete mode 100644 LICENCE.xc5000c
- delete mode 100644 LICENSE.Lontium
- delete mode 100644 LICENSE.amlogic_vdec
- delete mode 100644 LICENSE.amphion_vpu
- delete mode 100644 LICENSE.dib0700
- delete mode 100644 LICENSE.ipu3_firmware
-
-diff --git a/LICENCE.Abilis b/LICENCE.Abilis
-deleted file mode 100644
-index 9050d2b..0000000
---- a/LICENCE.Abilis
-+++ /dev/null
+diff -ruN step1/LICENCE.Abilis step2/LICENCE.Abilis
+--- step1/LICENCE.Abilis	2025-11-18 02:56:05.954350344 +0000
++++ step2/LICENCE.Abilis	1970-01-01 00:00:00.000000000 +0000
 @@ -1,22 +0,0 @@
 -Firmware provided by Pierrick Hascoet <pierrick.hascoet@abiliss.com> to Devin
 -Heitmueller <dheitmueller@kernellabs.com> on January 15, 2010.
@@ -107,11 +57,9 @@ index 9050d2b..0000000
 -PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
 -TORTUOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 -PERFORMANCE OF THIS SOFTWARE.
-diff --git a/LICENCE.cadence b/LICENCE.cadence
-deleted file mode 100644
-index b3564c2..0000000
---- a/LICENCE.cadence
-+++ /dev/null
+diff -ruN step1/LICENCE.cadence step2/LICENCE.cadence
+--- step1/LICENCE.cadence	2025-11-18 02:56:05.954673216 +0000
++++ step2/LICENCE.cadence	1970-01-01 00:00:00.000000000 +0000
 @@ -1,63 +0,0 @@
 -Copyright (c) 2018, Cadence Design Systems, Inc.
 -All rights reserved.
@@ -176,40 +124,56 @@ index b3564c2..0000000
 -that (like the original fortran), these routines can work on
 -arbitrary length vectors that need not be powers of two in
 -length. */
-diff --git a/LICENCE.cnm b/LICENCE.cnm
-deleted file mode 100644
-index 48d23ea..0000000
---- a/LICENCE.cnm
-+++ /dev/null
-@@ -1,23 +0,0 @@
+diff -ruN step1/LICENCE.cnm step2/LICENCE.cnm
+--- step1/LICENCE.cnm	2025-11-18 02:56:05.955673218 +0000
++++ step2/LICENCE.cnm	1970-01-01 00:00:00.000000000 +0000
+@@ -1,43 +0,0 @@
 -Copyright (C) 2021 Chips&Media, Inc.
 -All rights reserved.
 -
--Redistribution and use in binary form is permitted provided that the following
+-Redistribution and use in binary form are permitted provided that the following
 -conditions are met:
 -
 -1. Redistributions must reproduce the above copyright notice, this list of
 -conditions and the following disclaimer in the documentation and/or other
 -materials provided with the distribution.
 -
--2. Redistribution and use shall be used only with Texas Instruments Incorporateds
--silicon products. Any other use, reproduction, modification, translation,
--or compilation of the Software is prohibited.
+-2. Use of the following software binaries shall be strictly limited as
+-specified below:
+-
+-  2.1 Solely for use with Texas Instruments Incorporated's silicon products:
+-    * wave521c_k3_codec_fw.bin
+-
+-  2.2 Solely for use with NXP's silicon products:
+-    * wave633c_imx9_codec_fw.bin
+-
+-Any other use, reproduction, modification, translation, or compilation of the
+-Software is prohibited.
 -
 -3. No reverse engineering, decompilation, or disassembly is permitted.
+-
+-4. Neither the name of Chips&Media, Inc. nor the names of its suppliers may be
+-used to endorse or promote products derived from this software without specific
+-prior written permission.
 -
 -TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THIS SOFTWARE IS PROVIDED
 -"AS IS" WITHOUT WARRANTY OF ANY KIND, INCLUDING, WITHOUT LIMITATION, ANY EXPRESS
 -OR IMPLIED WARRANTIES OF MERCHANTABILITY, ACCURACY, FITNESS OR SUFFICIENCY FOR A
 -PARTICULAR PURPOSE, SATISFACTORY QUALITY, CORRESPONDENCE WITH DESCRIPTION, QUIET
 -ENJOYMENT OR NON-INFRINGEMENT OF THIRD PARTY INTELLECTUAL PROPERTY RIGHTS.
--CHIPS&MEDIA, INC., ITS AFFILIATES AND THEIR SUPPLIERS DISCLAIM ANY WARRANTY THAT THE
--DELIVERABLES WILL OPERATE WITHOUT INTERRUPTION OR BE ERROR-FREE.
-diff --git a/LICENCE.go7007 b/LICENCE.go7007
-deleted file mode 100644
-index 3689f3b..0000000
---- a/LICENCE.go7007
-+++ /dev/null
+-CHIPS&MEDIA, INC., ITS AFFILIATES AND THEIR SUPPLIERS DISCLAIM ANY WARRANTY THAT
+-THE DELIVERABLES WILL OPERATE WITHOUT INTERRUPTION OR BE ERROR-FREE.
+-
+-IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+-INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+-BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+-DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+-LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+-OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+-ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+diff -ruN step1/LICENCE.go7007 step2/LICENCE.go7007
+--- step1/LICENCE.go7007	2025-11-18 02:56:05.956673220 +0000
++++ step2/LICENCE.go7007	1970-01-01 00:00:00.000000000 +0000
 @@ -1,457 +0,0 @@
 -The README file from the original package from Micronas appears below. Only
 -the part about the firmware redistribution in section 0 is relevant, all
@@ -668,11 +632,9 @@ index 3689f3b..0000000
 -
 - - The WIS Star Trek and PCI Voyager boards have no support yet for audio
 -   or the TV tuner.
-diff --git a/LICENCE.it913x b/LICENCE.it913x
-deleted file mode 100644
-index ec8f56c..0000000
---- a/LICENCE.it913x
-+++ /dev/null
+diff -ruN step1/LICENCE.it913x step2/LICENCE.it913x
+--- step1/LICENCE.it913x	2025-11-18 02:56:05.956673220 +0000
++++ step2/LICENCE.it913x	1970-01-01 00:00:00.000000000 +0000
 @@ -1,17 +0,0 @@
 -Copyright (c) 2014, ITE Tech. Inc.
 -
@@ -691,11 +653,9 @@ index ec8f56c..0000000
 -WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION,
 -ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
 -SOFTWARE.
-diff --git a/LICENCE.rockchip b/LICENCE.rockchip
-deleted file mode 100644
-index d23b4c4..0000000
---- a/LICENCE.rockchip
-+++ /dev/null
+diff -ruN step1/LICENCE.rockchip step2/LICENCE.rockchip
+--- step1/LICENCE.rockchip	2025-11-18 02:56:05.957673222 +0000
++++ step2/LICENCE.rockchip	1970-01-01 00:00:00.000000000 +0000
 @@ -1,41 +0,0 @@
 -Copyright (c) 2016, Fuzhou Rockchip Electronics Co.Ltd
 -All rights reserved.
@@ -738,11 +698,9 @@ index d23b4c4..0000000
 -TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
 -USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
 -DAMAGE.
-diff --git a/LICENCE.siano b/LICENCE.siano
-deleted file mode 100644
-index 97e5440..0000000
---- a/LICENCE.siano
-+++ /dev/null
+diff -ruN step1/LICENCE.siano step2/LICENCE.siano
+--- step1/LICENCE.siano	2025-11-18 02:56:05.958673224 +0000
++++ step2/LICENCE.siano	1970-01-01 00:00:00.000000000 +0000
 @@ -1,31 +0,0 @@
 -FIRMWARE LICENSE TERMS
 -
@@ -775,11 +733,9 @@ index 97e5440..0000000
 -ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 -(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
 -THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
-diff --git a/LICENCE.ti-tspa b/LICENCE.ti-tspa
-deleted file mode 100644
-index 728fc2b..0000000
---- a/LICENCE.ti-tspa
-+++ /dev/null
+diff -ruN step1/LICENCE.ti-tspa step2/LICENCE.ti-tspa
+--- step1/LICENCE.ti-tspa	2025-11-18 02:56:05.958673224 +0000
++++ step2/LICENCE.ti-tspa	1970-01-01 00:00:00.000000000 +0000
 @@ -1,46 +0,0 @@
 -TI TSPA License
 -TECHNOLOGY AND SOFTWARE PUBLICLY AVAILABLE
@@ -827,11 +783,9 @@ index 728fc2b..0000000
 -LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 -NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
 -EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-diff --git a/LICENCE.xc4000 b/LICENCE.xc4000
-deleted file mode 100644
-index e3cd261..0000000
---- a/LICENCE.xc4000
-+++ /dev/null
+diff -ruN step1/LICENCE.xc4000 step2/LICENCE.xc4000
+--- step1/LICENCE.xc4000	2025-11-18 02:56:05.958673224 +0000
++++ step2/LICENCE.xc4000	1970-01-01 00:00:00.000000000 +0000
 @@ -1,23 +0,0 @@
 -The following XC4000 firmware file "dvb-fe-xc4000-1.4.1.fw" was
 -created based on version 1.4 of "xc4000_firmwares.h".
@@ -856,11 +810,9 @@ index e3cd261..0000000
 -// WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 -// ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 -// OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-diff --git a/LICENCE.xc5000 b/LICENCE.xc5000
-deleted file mode 100644
-index 0ac8557..0000000
---- a/LICENCE.xc5000
-+++ /dev/null
+diff -ruN step1/LICENCE.xc5000 step2/LICENCE.xc5000
+--- step1/LICENCE.xc5000	2025-11-18 02:56:05.958673224 +0000
++++ step2/LICENCE.xc5000	1970-01-01 00:00:00.000000000 +0000
 @@ -1,23 +0,0 @@
 -The following XC500 firmware file "dvb-fe-xc5000-1.6.114.fw" was
 -created based on "xc5000_firmwares_32000Khz.h".
@@ -885,11 +837,9 @@ index 0ac8557..0000000
 -// WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 -// ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 -// OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-diff --git a/LICENCE.xc5000c b/LICENCE.xc5000c
-deleted file mode 100644
-index 23b81e7..0000000
---- a/LICENCE.xc5000c
-+++ /dev/null
+diff -ruN step1/LICENCE.xc5000c step2/LICENCE.xc5000c
+--- step1/LICENCE.xc5000c	2025-11-18 02:56:05.958673224 +0000
++++ step2/LICENCE.xc5000c	1970-01-01 00:00:00.000000000 +0000
 @@ -1,23 +0,0 @@
 -The following XC500C firmware file "dvb-fe-xc5000C-4.1.30.7.fw" was created
 -based on "Xc5200_firmwares_32000Khz.h".
@@ -914,19 +864,9 @@ index 23b81e7..0000000
 -// WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
 -// ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 -// OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-diff --git a/LICENSE.Lontium b/LICENSE.Lontium
-deleted file mode 100644
-index 2989473..0000000
---- a/LICENSE.Lontium
-+++ /dev/null
-@@ -1,2 +0,0 @@
--Lontium Semiconductor Corp. grants permission to use and redistribute aforementioned firmware file for the use with devices containing Lontium chipsets, but not as part of the Linux kernel or in any other form which would require the file itself to be covered by the terms of the GNU General Public License or the GNU Lesser General Public License.
--The firmware file is distributed in the hope that it will be useful, but is provided WITHOUT ANY WARRANTY, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
-diff --git a/LICENSE.amlogic_vdec b/LICENSE.amlogic_vdec
-deleted file mode 100644
-index ac48f20..0000000
---- a/LICENSE.amlogic_vdec
-+++ /dev/null
+diff -ruN step1/LICENSE.amlogic_vdec step2/LICENSE.amlogic_vdec
+--- step1/LICENSE.amlogic_vdec	2025-11-18 02:56:05.960673229 +0000
++++ step2/LICENSE.amlogic_vdec	1970-01-01 00:00:00.000000000 +0000
 @@ -1,15 +0,0 @@
 ----------------------------------------------------------------------
 -Amlogic Co., Inc. grants permission to use and redistribute
@@ -943,11 +883,9 @@ index ac48f20..0000000
 -
 -Amlogic Contact: Arden Jin <Arden.Jin@amlogic.com>
 ----------------------------------------------------------------------
-diff --git a/LICENSE.amphion_vpu b/LICENSE.amphion_vpu
-deleted file mode 100644
-index 31840ec..0000000
---- a/LICENSE.amphion_vpu
-+++ /dev/null
+diff -ruN step1/LICENSE.amphion_vpu step2/LICENSE.amphion_vpu
+--- step1/LICENSE.amphion_vpu	2025-11-18 02:56:05.960673229 +0000
++++ step2/LICENSE.amphion_vpu	1970-01-01 00:00:00.000000000 +0000
 @@ -1,48 +0,0 @@
 -Copyright 2015, Amphion Semiconductor Ltd
 -Copyright 2021, NXP
@@ -997,11 +935,9 @@ index 31840ec..0000000
 -ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
 -TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
 -USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-diff --git a/LICENSE.dib0700 b/LICENSE.dib0700
-deleted file mode 100644
-index fdb6bde..0000000
---- a/LICENSE.dib0700
-+++ /dev/null
+diff -ruN step1/LICENSE.dib0700 step2/LICENSE.dib0700
+--- step1/LICENSE.dib0700	2025-11-18 02:56:05.960673229 +0000
++++ step2/LICENSE.dib0700	1970-01-01 00:00:00.000000000 +0000
 @@ -1,22 +0,0 @@
 -Firmware provided by Patrick Boettcher <pboettcher@dibcom.fr> to Devin
 -Heitmueller <dheitmueller@kernellabs.com> on October 8, 2009.
@@ -1025,11 +961,9 @@ index fdb6bde..0000000
 -PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
 -TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 -PERFORMANCE OF THIS SOFTWARE.
-diff --git a/LICENSE.ipu3_firmware b/LICENSE.ipu3_firmware
-deleted file mode 100644
-index 2559884..0000000
---- a/LICENSE.ipu3_firmware
-+++ /dev/null
+diff -ruN step1/LICENSE.ipu3_firmware step2/LICENSE.ipu3_firmware
+--- step1/LICENSE.ipu3_firmware	2025-11-18 02:56:05.961673231 +0000
++++ step2/LICENSE.ipu3_firmware	1970-01-01 00:00:00.000000000 +0000
 @@ -1,36 +0,0 @@
 -Copyright (c) 2017, Intel Corporation.
 -All rights reserved.
@@ -1067,564 +1001,9 @@ index 2559884..0000000
 -TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
 -USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
 -DAMAGE.
-diff --git a/WHENCE b/WHENCE
-index 116d04d..d78e45e 100644
---- a/WHENCE
-+++ b/WHENCE
-@@ -53,16 +53,6 @@ Found in hex form in the kernel source.
- 
- --------------------------------------------------------------------------
- 
--Driver: dvb-ttusb-budget -- Technotrend/Hauppauge Nova-USB devices
--
--File: ttusb-budget/dspbootcode.bin
--
--Licence: Unknown
--
--Found in hex form in the kernel source.
--
----------------------------------------------------------------------------
--
- Driver: keyspan -- USB Keyspan USA-xxx serial device
- 
- File: keyspan/mpr.fw
-@@ -236,45 +226,6 @@ Converted from Intel HEX files, used in our binary representation of ihex.
- 
- --------------------------------------------------------------------------
- 
--Driver: cpia2 -- cameras based on Vision's CPiA2
--
--File: cpia2/stv0672_vp4.bin
--
--Licence: Allegedly GPLv2+, but no source visible. Marked:
--	Copyright (C) 2001 STMicroelectronics, Inc.
--	Contact:  steve.miller@st.com
--	Description: This file contains patch data for the CPiA2 (stv0672) VP4.
--
--Found in hex form in kernel source.
--
----------------------------------------------------------------------------
--
--Driver: dabusb -- Digital Audio Broadcasting (DAB) Receiver for USB and Linux
--
--File: dabusb/firmware.fw
--File: dabusb/bitstream.bin
--
--Licence: Distributable
--
-- * Copyright (C) 1999 BayCom GmbH
-- *
-- * Redistribution and use in source and binary forms, with or without
-- * modification, are permitted provided that redistributions of source
-- * code retain the above copyright notice and this comment without
-- * modification.
--
----------------------------------------------------------------------------
--
--Driver: vicam -- USB 3com HomeConnect (aka vicam)
--
--File: vicam/firmware.fw
--
--Licence: Unknown
--
--Found in hex form in kernel source.
--
----------------------------------------------------------------------------
--
- Driver: io_edgeport - USB Inside Out Edgeport Serial Driver
- 
- File: edgeport/boot.fw
-@@ -1038,17 +989,6 @@ Also available from http://wireless.kernel.org/en/users/Drivers/iwlwifi#Firmware
- 
- --------------------------------------------------------------------------
- 
--Driver: ipu3-imgu - Intel IPU3 (3rd Gen Image Processing Unit) driver
--
--File: intel/irci_irci_ecr-master_20161208_0213_20170112_1500.bin
--Version: irci_irci_ecr-master_20161208_0213_20170112_1500
--md5sum: 59abc311fce49c5a180b5a8a3917912d
--Link: intel/ipu3-fw.bin -> irci_irci_ecr-master_20161208_0213_20170112_1500.bin
--
--Licence: Redistributable. See LICENSE.ipu3_firmware for details
--
----------------------------------------------------------------------------
--
- Driver: tehuti - Tehuti Networks 10G Ethernet
- 
- File: tehuti/bdx.bin
-@@ -1203,36 +1143,6 @@ Found in hex form in kernel source.
- 
- --------------------------------------------------------------------------
- 
--Driver: cx231xx - Conexant Cx23100/101/102 USB broadcast A/V decoder
--
--File: v4l-cx231xx-avcore-01.fw
--
--Driver: cx23418 - Conexant PCI Broadcast A/V with MPEG encoder
--
--File: v4l-cx23418-apu.fw
--File: v4l-cx23418-cpu.fw
--File: v4l-cx23418-dig.fw
--
--Driver: cx23885 - Conexant PCI Express Broadcast A/V decoder
--
--File: v4l-cx23885-avcore-01.fw
--
--Driver: cx23840 - Conexant sideport Broadcast A/V decoder
--
--File: v4l-cx25840.fw
--
--Licence: Redistributable.
--
--  Conexant grants permission to use and redistribute these firmware
--  files for use with Conexant devices, but not as a part of the Linux
--  kernel or in any other form which would require these files themselves
--  to be covered by the terms of the GNU General Public License.
--  These firmware files are distributed in the hope that they will be
--  useful, but WITHOUT ANY WARRANTY; without even the implied warranty
--  of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
--
----------------------------------------------------------------------------
--
- Driver: qlogicpti - PTI Qlogic, ISP Driver
- 
- File: qlogic/isp1000.bin
-@@ -1316,18 +1226,6 @@ Available from http://ldriver.qlogic.com/firmware/netxen_nic/new/
- 
- --------------------------------------------------------------------------
- 
--Driver: dvb-ttpci -- AV7110 cards
--
--File: av7110/bootcode.bin
--Source: av7110/Boot.S
--Source: av7110/Makefile
--
--Licence: GPLv2 or later. See GPL-2 and GPL-3 for details.
--
--ARM assembly source code from https://linuxtv.org/downloads/firmware/Boot.S
--
----------------------------------------------------------------------------
--
- Driver: rt61pci - Ralink RT2561, RT2561S, RT2661 wireless MACs
- 
- File: rt2561.bin
-@@ -1421,35 +1319,6 @@ Provided from the author, Bernd Porr <BerndPorr@f2s.com>
- 
- --------------------------------------------------------------------------
- 
--Driver: xc4000 - Xceive 4000 Tuner driver
--
--File: dvb-fe-xc4000-1.4.1.fw
--Version: 1.4.1
--
--Licence: Redistributable. See LICENCE.xc4000 for details
--
----------------------------------------------------------------------------
--Driver: xc5000 - Xceive 5000 Tuner driver
--
--File: dvb-fe-xc5000-1.6.114.fw
--Version: 1.6.114
--
--File: dvb-fe-xc5000c-4.1.30.7.fw
--Version: 4.1.30.7
--
--Licence: Redistributable. See LICENCE.xc5000 and LICENCE.xc5000c for details
--
----------------------------------------------------------------------------
--
--Driver: dib0700 - DiBcom dib0700 USB DVB bridge driver
--
--File: dvb-usb-dib0700-1.20.fw
--Version: 1.20
--
--Licence: Redistributable. See LICENSE.dib0700 for details
--
----------------------------------------------------------------------------
--
- Driver: ath3k - DFU Driver for Atheros bluetooth chipset AR3011
- 
- File: ath3k-1.fw
-@@ -2387,14 +2256,6 @@ Licence: Redistributable, provided by Realtek in their driver
- 
- --------------------------------------------------------------------------
- 
--Driver: lgs8gxx - Legend Silicon GB20600 demodulator driver
--
--File: lgs8g75.fw
--
--Licence: Unknown
--
----------------------------------------------------------------------------
--
- Driver: ib_qib - QLogic Infiniband
- 
- File: qlogic/sd7220.fw
-@@ -2671,14 +2532,6 @@ Licence: GPLv2. See GPL-2 for details.
- 
- --------------------------------------------------------------------------
- 
--Driver: ti-vpe - Texas Instruments V4L2 driver for Video Processing Engine
--
--File: ti/vpdma-1b8.bin
--
--Licence: Redistributable. See LICENCE.ti-tspa for details.
--
----------------------------------------------------------------------------
--
- Driver: wl1251 - Texas Instruments 802.11 WLAN driver for WiLink4 chips
- 
- File: ti-connectivity/wl1251-fw.bin
-@@ -2807,23 +2660,6 @@ Licence: Redistributable. See LICENCE.ti-connectivity for details.
- 
- --------------------------------------------------------------------------
- 
--Driver: tlg2300 - Telgent 2300 V4L/DVB driver.
--
--File: tlg2300_firmware.bin
--
--Licence: Redistributable.
--
--  Telegent System grants permission to use and redistribute these
--  firmware files for use with devices containing the chip tlg2300, but
--  not as a part of the Linux kernel or in any other form which would
--  require these files themselves to be covered by the terms of the GNU
--  General Public License. These firmware files are distributed in the
--  hope that they will be useful, but WITHOUT ANY WARRANTY; without even
--  the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
--  PURPOSE.
--
----------------------------------------------------------------------------
--
- Driver: r8712u - Realtek 802.11n WLAN driver for RTL8712U
- 
- File: rtlwifi/rtl8712u.bin
-@@ -3459,23 +3295,6 @@ License: Redistributable. See LICENCE.atheros_firmware for details
- 
- --------------------------------------------------------------------------
- 
--Driver: drxk - Micronas DRX-K demodulator driver
--
--File: dvb-usb-terratec-h5-drxk.fw
--
--Licence: Redistributable.
--
--TERRATEC grants permission to use and redistribute these firmware
--files for use with TERRATEC devices, but not as part of the Linux
--kernel or in any other form which would require these files themselves
--to be covered by the terms of the GNU General Public License.
--
--These firmware files are distributed in the hope that they will be
--useful, but WITHOUT ANY WARRANTY; without even the implied warranty
--of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
--
----------------------------------------------------------------------------
--
- Driver: ene-ub6250 -- ENE UB6250 SD card reader driver
- 
- File: ene-ub6250/sd_init1.bin
-@@ -3506,27 +3325,6 @@ Licence: Redistributable. See LICENCE.atheros_firmware for details
- 
- --------------------------------------------------------------------------
- 
--Driver: s5p-mfc - Samsung MFC video encoder/decoder driver
--
--File: s5p-mfc.fw
--File: s5p-mfc-v6.fw
--File: s5p-mfc-v6-v2.fw
--File: s5p-mfc-v7.fw
--File: s5p-mfc-v8.fw
--
--Licence: Redistributable.
--
--Samsung grants permission to use and redistribute aforementioned firmware
--files for the use with Exynos series devices, but not as part of the Linux
--kernel, or in any other form which would require these files themselves
--to be covered by the terms of the GNU General Public License.
--
--These firmware files are distributed in the hope that they will be
--useful, but WITHOUT ANY WARRANTY; without even the implied warranty
--of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
--
----------------------------------------------------------------------------
--
- Driver: carl9170 -- Atheros AR9170 802.11 draft-n USB driver
- 
- File: carl9170-1.fw
-@@ -3770,33 +3568,6 @@ of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- 
- --------------------------------------------------------------------------
- 
--Driver: go7007
--
--File: go7007/s2250-1.fw
--File: go7007/s2250-2.fw
--Link: s2250.fw -> go7007/s2250-2.fw
--Link: s2250_loader.fw -> go7007/s2250-1.fw
--
--Licence:
--  Sensoray grants permission to use and redistribute these firmware
--  files for use with Sensoray devices, but not as a part of the Linux
--  kernel or in any other form which would require these files themselves
--  to be covered by the terms of the GNU General Public License.
--  These firmware files are distributed in the hope that they will be
--  useful, but WITHOUT ANY WARRANTY; without even the implied warranty
--  of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
--
--File: go7007/go7007fw.bin
--File: go7007/go7007tv.bin
--File: go7007/lr192.fw
--File: go7007/px-m402u.fw
--File: go7007/px-tv402u.fw
--File: go7007/wis-startrek.fw
--
--Licence: Redistributable. See LICENCE.go7007 for details
--
----------------------------------------------------------------------------
--
- Driver: ccp - Platform Security Processor (PSP) device
- 
- File: amd/amd_sev_fam17h_model0xh.sbin
-@@ -3967,44 +3738,6 @@ Licence: Redistributable. See LICENCE.r8a779x_usb3 for details.
- 
- --------------------------------------------------------------------------
- 
--Driver: as102 - Abilis Systems Single DVB-T Receiver
--
--File: as102_data1_st.hex
--File: as102_data2_st.hex
--
--License: Redistributable. See LICENCE.Abilis for details
--
----------------------------------------------------------------------------
--
--Driver: it9135 -- ITEtech IT913x DVB-T USB driver
--
--File: dvb-usb-it9135-01.fw
--File: dvb-usb-it9135-02.fw
--
--Licence: Redistributable. See LICENCE.it913x for details
--
----------------------------------------------------------------------------
--
--Driver: smsmdtv - Siano MDTV Core module
--
--File: cmmb_vega_12mhz.inp
--File: cmmb_venice_12mhz.inp
--File: dvb_nova_12mhz.inp
--File: dvb_nova_12mhz_b0.inp
--File: isdbt_nova_12mhz.inp
--File: isdbt_nova_12mhz_b0.inp
--File: isdbt_rio.inp
--File: sms1xxx-hcw-55xxx-dvbt-02.fw
--File: sms1xxx-hcw-55xxx-isdbt-02.fw
--File: sms1xxx-nova-a-dvbt-01.fw
--File: sms1xxx-nova-b-dvbt-01.fw
--File: sms1xxx-stellar-dvbt-01.fw
--File: tdmb_nova_12mhz.inp
--
--Licence: Redistributable. See LICENCE.siano for details
--
----------------------------------------------------------------------------
--
- Driver: xhci-tegra -- NVIDIA Tegra XHCI driver
- 
- File: nvidia/tegra124/xusb.bin
-@@ -4023,23 +3756,6 @@ Licence: Redistributable. See LICENCE.nvidia for details
- 
- --------------------------------------------------------------------------
- 
--Driver: tegra-vic -- NVIDIA Tegra VIC driver
--
--File: nvidia/tegra124/vic03_ucode.bin
--Link: nvidia/tegra124/vic.bin -> vic03_ucode.bin
--
--File: nvidia/tegra210/vic04_ucode.bin
--Link: nvidia/tegra210/vic.bin -> vic04_ucode.bin
--
--File: nvidia/tegra186/vic04_ucode.bin
--Link: nvidia/tegra186/vic.bin -> vic04_ucode.bin
--
--File: nvidia/tegra194/vic.bin
--
--Licence: Redistributable. See LICENCE.nvidia for details
--
----------------------------------------------------------------------------
--
- Driver: atusb - ATUSB IEEE 802.15.4 transceiver driver
- 
- File: atusb/atusb-0.2.dfu
-@@ -4995,17 +4711,6 @@ Licence: Redistributable. See LICENCE.Marvell for details.
- 
- --------------------------------------------------------------------------
- 
--Driver: mtk-vpu - MediaTek VPU video processing unit driver
--
--File: mediatek/mt8173/vpu_d.bin
--File: mediatek/mt8173/vpu_p.bin
--Link: vpu_d.bin -> mediatek/mt8173/vpu_d.bin
--Link: vpu_p.bin -> mediatek/mt8173/vpu_p.bin
--
--Licence: Redistributable. See LICENCE.mediatek for details.
--
----------------------------------------------------------------------------
--
- Driver: mtk_scp - MediaTek SCP System Control Processing Driver
- 
- File: mediatek/mt8183/scp.img
-@@ -5035,15 +4740,6 @@ Licence: Redistributable. See LICENCE.mediatek for details.
- 
- --------------------------------------------------------------------------
- 
--Driver: rk3399-dptx - ROCKCHIP rk3399 dptx firmware
--
--File: rockchip/dptx.bin
--Version: 3.1
--
--Licence: Redistributable. See LICENCE.rockchip for details.
--
----------------------------------------------------------------------------
--
- Driver: mt76x0 - MediaTek MT76x0 Wireless MACs
- 
- File: mediatek/mt7610u.bin
-@@ -5323,44 +5019,6 @@ Licence: Redistributable. See LICENSE.QualcommAtheros_ath10k for details
- 
- --------------------------------------------------------------------------
- 
--Driver: venus - Qualcomm Venus video codec accelerator
--
--File: qcom/venus-1.8/venus.mbn
--Link: qcom/venus-1.8/venus.mdt -> venus.mbn
--
--Version: 1.8-00109
--
--File: qcom/venus-4.2/venus.mbn
--Link: qcom/venus-4.2/venus.mdt -> venus.mbn
--
--Version: 4.2
--
--File: qcom/venus-5.2/venus.mbn
--Link: qcom/venus-5.2/venus.mdt -> venus.mbn
--
--Version: 5.2-00023
--
--File: qcom/venus-5.4/venus.mbn
--Link: qcom/venus-5.4/venus.mdt -> venus.mbn
--
--Version: 5.4-00053
--
--File: qcom/vpu-1.0/venus.mbn
--Link: qcom/vpu-1.0/venus.mdt -> venus.mbn
--
--Version: VIDEO.VPU.1.0-00087-PROD-1
--
--File: qcom/vpu-2.0/venus.mbn
--
--Version: VIDEO.VPU.2.0-00049-PROD-1
--
--Licence: Redistributable. See LICENSE.qcom and qcom/NOTICE.txt for details
--
--Binary files supplied originally from
--https://developer.qualcomm.com/hardware/dragonboard-410c/tools
--
----------------------------------------------------------------------------
--
- Driver: imx-sdma - support for i.MX SDMA driver
- 
- File: imx/sdma/sdma-imx6q.bin
-@@ -5582,15 +5240,6 @@ Licence:
- 
- --------------------------------------------------------------------------
- 
--Driver: cdns-mhdp - Cadence MHDP8546 DP bridge
--
--File: cadence/mhdp8546.bin
--Version: 2.1.0
--
--Licence: Redistributable. See LICENCE.cadence for details
--
----------------------------------------------------------------------------
--
- Driver: fsl-mc bus - NXP Management Complex Bus Driver
- 
- File: dpaa2/mc/mc_10.10.0_ls1088a.itb
-@@ -5622,28 +5271,6 @@ Licence: Redistributable. See LICENCE.microchip for details
- 
- --------------------------------------------------------------------------
- 
--Driver: meson-vdec - Amlogic video decoder
--
--File: meson/vdec/g12a_h264.bin
--File: meson/vdec/g12a_hevc_mmu.bin
--File: meson/vdec/g12a_vp9.bin
--File: meson/vdec/gxbb_h264.bin
--File: meson/vdec/gxl_h263.bin
--File: meson/vdec/gxl_h264.bin
--File: meson/vdec/gxl_hevc.bin
--File: meson/vdec/gxl_hevc_mmu.bin
--File: meson/vdec/gxl_mjpeg.bin
--File: meson/vdec/gxl_mpeg12.bin
--File: meson/vdec/gxl_mpeg4_5.bin
--File: meson/vdec/gxl_vp9.bin
--File: meson/vdec/gxm_h264.bin
--File: meson/vdec/sm1_hevc_mmu.bin
--File: meson/vdec/sm1_vp9_mmu.bin
--
--Licence: Redistributable. See LICENSE.amlogic_vdec for details.
--
----------------------------------------------------------------------------
--
- Driver: ice - Intel(R) Ethernet Connection E800 Series
- 
- File: intel/ice/ddp/ice-1.3.30.0.pkg
-@@ -5685,14 +5312,6 @@ Licence: Redistributable. See LICENCE.Marvell for details.
- 
- ------------------------------------------------
- 
--Driver: lt9611uxc - Lontium DSI to HDMI bridge
--
--File: lt9611uxc_fw.bin
--
--License: Redistributable. See LICENSE.Lontium for details.
--
----------------------------------------------------------------------------
--
- Driver: wfx - Silicon Labs Wi-Fi Transceiver
- 
- File: wfx/wfm_wf200_C0.sec
-@@ -5713,14 +5332,6 @@ https://github.com/SiliconLabs/wfx-linux-tools
- 
- --------------------------------------------------------------------------
- 
--Driver: wave5 - Chips&Media, Inc. video codec driver
--
--File: cnm/wave521c_k3_codec_fw.bin
--
--Licence: Redistributable. See LICENCE.cnm for details.
--
-----------------------------------------------------------------------------
--
- Driver: rvu_cptpf - Marvell CPT driver
- 
- File: mrvl/cpt01/ae.out
-@@ -5741,17 +5352,6 @@ Licence: Redistributable. See LICENCE.Marvell for details.
- 
- ---------------------------------------------------------------------------
- 
--Driver: amphion - Amphion VPU(Video Processing Unit) Codec IP driver
--
--File: amphion/vpu/vpu_fw_imx8_dec.bin
--Version: 1.8.8
--File: amphion/vpu/vpu_fw_imx8_enc.bin
--Version: 1.3.4
--
--Licence: Redistributable. See LICENSE.amphion_vpu for details
--
-----------------------------------------------------------------------------
--
- Driver: nxp-sr1xx - NXP Ultra Wide Band driver
- File: nxp/sr150_fw.bin
- Version: 35.00.03
--- 
-2.40.1
-
+diff -ruN step1/LICENSE.Lontium step2/LICENSE.Lontium
+--- step1/LICENSE.Lontium	2025-11-18 02:56:05.959673227 +0000
++++ step2/LICENSE.Lontium	1970-01-01 00:00:00.000000000 +0000
+@@ -1,2 +0,0 @@
+-Lontium Semiconductor Corp. grants permission to use and redistribute aforementioned firmware file for the use with devices containing Lontium chipsets, but not as part of the Linux kernel or in any other form which would require the file itself to be covered by the terms of the GNU General Public License or the GNU Lesser General Public License.
+-The firmware file is distributed in the hope that it will be useful, but is provided WITHOUT ANY WARRANTY, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
